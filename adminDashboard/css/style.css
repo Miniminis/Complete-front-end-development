@@ -1,0 +1,23 @@
+body {
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+.navbar-expand-lg .navbar-nav .nav-link > i {
+  margin-right: 3px;
+}
+.sidebar {
+  margin: 20px -20px 20px 20px;
+}
+
+.main {
+  margin-top: 20px;
+}
+.fas {
+  margin-right: 10px;
+}
+.placeholders {
+  margin-top: 20px;
+  text-align: center;
+}
+.placeholder img {
+  display: inline;
+}

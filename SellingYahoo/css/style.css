@@ -1,0 +1,43 @@
+.body-container {
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+nav {
+  margin-top: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.nav-justified > a {
+  color: #777;
+  text-align: center;
+}
+.nav-justified > a:hover {
+  background-color: #e5e5e5;
+}
+.nav-justified > a > .active {
+  color: #e5e5e5;
+}
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+.jumbotron > p{
+  padding-top: 10px;
+}
+.jumbotron .btn {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+/* 버튼만 center  */
+.col-lg-4 > button {
+  margin-top: 10px;
+  text-align: center;
+}
+footer {
+  margin-top: 50px;
+}
