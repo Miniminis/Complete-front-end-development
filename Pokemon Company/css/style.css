@@ -1,0 +1,100 @@
+/*
+general
+*/
+body{
+  color: #5a5a5a;
+}
+
+.btn-light {
+    border-color: #212529;
+}
+
+/*
+navbar
+*/
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+  color: #FAD02C;
+}
+
+.margin-5 {
+  margin-right: 5px;
+}
+
+.margin-left-many {
+  margin-left: 500px;
+}
+
+.nav-item:hover {
+  color: #FAD02C;
+}
+
+/*
+carousel
+*/
+.carousel {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 400px;
+}
+
+/*
+Team section
+*/
+.team {
+  min-height: 600px;
+}
+.team .col-lg-3 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.team img {
+  margin-bottom: 20px;
+}
+
+.team h4 {
+  color: rgba(50,50,50,.7)
+}
+
+.team p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/*
+content
+*/
+.col-md-5 {
+  text-align: center;
+}
+.col-md-7 {
+  margin-top: 100px;
+}
+
+.content {
+  margin-top: 20px;
+  min-height: 600px;
+}
+
+footer {
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+}
