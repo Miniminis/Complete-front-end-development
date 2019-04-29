@@ -1,0 +1,54 @@
+/* html 초반 높이 설정이 얼마나 중요한지 기억! 배경 사진이 반쪽으로만 표시될 수 있음 */
+html {
+  height: 100%
+}
+.navbar-light .navbar-brand {
+  color: #F64839;
+}
+
+body {
+  background-image: url(https://images.pexels.com/photos/1109543/pexels-photo-1109543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Acme', sans-serif;
+
+}
+
+.center {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.button_width {
+  width: 300px;
+}
+
+.btn-outline-secondary {
+    color: #000000;
+    border-color: #000000;
+}
+
+
+.btn-fb {
+  color: #ffffff;
+  background-color: #4267B2
+}
+
+.btn-tw {
+  color: #ffffff;
+  background-color: #1DA1F2
+}
+
+.login-padding {
+  padding: 10px;
+  padding-left: 20px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.margin-social-button {
+  margin: 5px;
+}
