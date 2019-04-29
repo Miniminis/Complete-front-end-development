@@ -1,0 +1,52 @@
+body {
+  min-height: 100%;
+  background: linear-gradient(to right, #ECF87F, #81B622);
+}
+
+.wrapper{
+  width: 300px;
+  height: 350px;
+  margin: 70px auto;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 8px black;
+  font-family: 'East Sea Dokdo', cursive;
+}
+
+header {
+  background: linear-gradient(to right, #59981A, #3D550C);
+  padding: 2px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 8px;
+  border-bottom: dashed 5px black;
+}
+
+.wrap-list {
+  height: 85%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  float: right;
+  top: 10px;
+  right: 20px;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color:#CBCDCB;
+}
+
+/* 번호부분까지 적용 가능한지 알아내기 */
+.grey {
+  background: #E4E5E8;
+}
+
+i {
+  font-size: 20px;
+  margin-right: 10px;
+}
