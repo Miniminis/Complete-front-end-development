@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gmarket</title>
+    <style>
+        
+        div {
+            border: 1px solid black;
+        }
+        
+        .container {
+            margin: 50px auto;
+            width: 800px; 
+        }
+        
+        #header {
+            /*display: contents;*/
+            padding: 20px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        
+        #header>img {
+            width: 200px;  
+        }
+        
+        input[type=search] {
+            /*maring 순서: 상 우 하 좌 - 시계방향 */
+            margin: 10px;
+            vertical-align: bottom; 
+            /*vertical-align 질문 - middle 은 왜 안먹는걸까?*/
+            font-size: 25px;
+            border: 2px solid darkblue;
+            border-radius: 5px;
+        }
+        
+        input[type=checkbox] {
+            display: hidden;
+        }
+        
+        #navbar {
+            overflow: hidden;
+            margin: 0;
+            /*margin: 0 auto;*/
+        }
+    
+        .navlist>li {
+            list-style: none;
+            float: left;
+        }
+        .navlist>li:first-child>a {
+            border-radius: 5px 0 0 5px;
+        }
+        .navlist>li:last-child>a {
+            border-radius: 0 5px 5px 0;
+        }
+        .navlist>li:nth-child(2n) {
+            background-color:azure;
+        }
+        .navlist>li:nth-child(2n+1) {
+            background-color:aliceblue;
+        }
+        a {
+            text-decoration-line: none;
+            color:black;
+            display: block;
+            border: 1px solid lightgrey;
+            padding: 15px 20px;
+        }
+        a:active {
+            color: black;
+        }        
+        a:hover {
+            background-color:beige;
+        }
+  
+        #asidebar {
+            padding: 20px;
+        }
+        
+        #footer {
+            padding: 20px;
+            color: gray;
+            font-size: 12px;
+        }
+        #footer>#focus {
+            color: green;
+            font-weight: bold;
+        }
+        
+
+   
+    </style>
+</head>
+<body>
+  <div class="container">
+   
+    <!--header-->
+    <div id="header" >
+        <img src="gmarket-logo-english.gif" > 
+        <input type="search">   
+        <img src="https://t1.daumcdn.net/cfile/tistory/2345563E588FF6EC28">
+    </div>
+    
+    <!--navbar-->
+    <div id="navbar">
+        <ul class="navlist">
+            <li><a href="http://www.gmarket.co.kr">전체카테고리</a></li>
+            <li><a href="http://www.gmarket.co.kr">베스트</a></li>
+            <li><a href="http://www.gmarket.co.kr">쿠폰/출첵</a></li>
+            <li><a href="http://www.gmarket.co.kr">슈퍼딜</a></li>
+            <li><a href="http://www.gmarket.co.kr">스마일배송</a></li>
+            <li><a href="http://www.gmarket.co.kr">당일배송</a></li>
+        </ul>
+    </div>
+    
+    <!--aside menu-->
+    <div id="asidebar">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab quia labore vitae quae eveniet ratione hic asperiores doloremque iste, illum, maiores, id doloribus incidunt sunt fugiat, odit. Velit reprehenderit, consectetur sed quaerat expedita ea hic culpa commodi iusto possimus labore minus distinctio amet voluptate nostrum, tenetur deleniti animi magnam minima rem at delectus. Sit, dolor, enim! Repellat porro commodi, suscipit quis nulla! Officiis reiciendis sint consequatur est dolores nihil minima itaque atque omnis commodi, facilis ullam quis sapiente libero similique, quas aspernatur ut voluptate! Quos nisi quasi vel excepturi, non porro voluptate doloremque repellat provident incidunt, officiis iure facilis maxime!</p>
+    </div>
+    
+    <!--footer-->
+    <div id="footer">
+        <p>(주) 이베이코리아의 사전 서면 동의 없이 G마켓사이트의 일체의 정보, 콘텐츠 및 UI등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다. </p> 
+        <p id="focus">G마켓은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 G마켓은 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.</p>
+        <p>Copyright © eBay Korea Co., Ltd. All rights reserved.</p> 
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!--
+            <li><label>전체카테고리</label></li>
+            <input type="checkbox">
+            <ul>
+                <li>브랜드패션</li>
+                <li>패션의류</li>
+                <li>잡화/뷰티</li>
+                <li>유아동</li>
+                <li>식품</li>
+            </ul>
+-->

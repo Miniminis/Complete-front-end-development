@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Selector</title>
+    <style>
+        /*전체 선택 */ 
+        /* *와 부분태그는 전체적인 스타일설정을 일관되게 하는데 사용된다.*/
+        * {
+            color:white;
+            background-color:coral
+        }
+        
+        /*부분 태그 선택 */
+        h1 {
+            color: aqua;
+            text-align: center;
+            /*background-color: antiquewhite;*/
+        }
+        
+        p {
+            color: blue;
+            /*line-height: 200%;*/
+            line-height: 30px;
+            /*background-color: antiquewhite;*/
+        }
+        
+        div {
+            color:brown;
+            /*background-color: antiquewhite;*/
+        }
+        
+        /*중복선택
+        여러 요소들에 필요한 중복된 요청을 한번에 중복선택하여 처리할 수 있다*/ 
+        h1, p, div {
+            background-color: antiquewhite;
+            
+        }
+        
+        /*id 선택자 */
+        /*범위를 구분해놓고 일관되게 스타일을 적용하고 싶을때 사용한다. 
+        - 특정블럭 or 영역단위 
+        - 자바 스크립트를 위한 id 는 반드시 사용해야한다. */
+        #header {
+            background-color: blueviolet;
+            margin: 0 auto; 
+            /*margin 0(상하) auto(좌우: 공평분할) 
+            - auto는 좌우 영역에서만 가능하다. 
+            - 웹은 수직방향으로는 무한대로 늘어날 수 있기 때문에 
+            자동중앙은 없는 개념으로 본다. 
+            
+            * block 요소들의 정렬은 margin 0 auto를 이용한다. 
+            */
+            width: 500px;
+            
+        }
+        #wrap {
+            background-color: chartreuse;
+            padding: 10px;  /*padding: border 내부의 영역을 조절*/
+           /* padding-bottom: 50px;
+            padding-right: 100px;*/
+            margin: 0 auto; /*margin: border 바깥쪽의 영역을 조절*/
+            width: 500px; /*padding 값 때문에 다른 모습을 띄게 된다. */
+        }
+        #content {
+            background-color: crimson;
+            margin: 10px;
+        }
+        #aside {
+            background-color: forestgreen;
+            margin: 10px;
+        }
+        #footer {
+            background-color: darkseagreen;
+            margin: 0 auto;
+            width: 500px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>제목 글자 태그</h1>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit magnam aliquid, dolor natus id quas officia explicabo assumenda cum incidunt, magni temporibus excepturi exercitationem tempore maiores ea mollitia ratione nihil eius. Atque dolorum inventore ducimus neque, accusamus laboriosam assumenda amet tempora distinctio! Sed similique eveniet, cumque excepturi quis deleniti molestiae quas ullam veritatis magnam est incidunt nihil aperiam nam odit placeat tempore laudantium? Quia quasi cupiditate enim unde sequi iusto dolore, nulla ipsum nobis blanditiis eius in dolorum placeat minus incidunt nam illum, a omnis? Iusto fugiat dolorem reiciendis enim beatae voluptate asperiores cumque doloribus illo, cum accusamus, adipisci ad. Maiores modi iusto voluptatibus aliquam tenetur.</p> 
+    
+    <div>
+        DIV 블럭 영역입니다. 
+    </div>   
+    
+    <div id="header">
+        Header 영역 
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            aside 영역 
+        </div>
+        <div id="content">
+            content 영역
+        </div>
+    </div>
+    <div id="footer">
+        footer 영역 
+    </div>
+   
+</body>
+</html>
+
+
+<!--
+html5 요소 태그를 먼저 구성한 후, 
+css3 선택자 정의하여 적용 -->
+
+
+<!--스타일의 우선순위 
+- 맨 마지막부터 우선순위를 갖는다. -->
+
+
+<!--공간분할: flat 속성 
+flat: 콘텐츠 정렬-->

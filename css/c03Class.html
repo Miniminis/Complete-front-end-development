@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Selector</title>
+    <style>
+        * {
+            font-size: 30px;
+        }
+        .text_color {
+            color: red;
+        }
+        .text_bold {
+            font-weight: bold;
+        }
+        .text_itelic {
+            font-style: italic;
+        }
+        /*li 태그 중에, text_itelic 를 갖고 있는 요소들만 선택 */
+        /*h1 tag는 text_itelic을 갖고 있지만 영향을 받지 않음*/
+        li.text_itelic { 
+            background-color: blanchedalmond;
+        }
+        li.text_bold {
+            background-color: aqua
+        }
+        
+        input[type=text] {
+            background-color: azure;
+            /*테두리의 두께, 선모양, 컬러*/
+            border: 1px solid #AAAAAA;
+            /*border-width: thick;
+            border-style:dashed;
+            border-color: blue;*/
+            
+            /*위와 같이 한꺼번에 설정할수도 있고, 
+            위의 기본값을 우선 설정한 후에 따로따로 필요한 부분을 추가 설정할수도 있다. */
+        }
+        input[type=password] {
+            background-color: brown;
+            border: 1px solid blue;
+        }
+        input[type=submit] {
+            background-color:coral;
+            /*padding: 20px;*/
+            padding: 10px 30px;
+            font-weight: 800;
+            border: 1px soild #AAAAAA;
+            color:brown;
+            
+        }
+        input[type=checkbox] {
+           /* background-color: crimson;*/
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+   <h1 class="text_itelic">Title </h1> 
+    <ul>
+       <!--li: block 속성 -->
+        <li class="text_color text_bold text_itelic" >사과</li>
+        <li>바나나</li>
+        <li class="text_color text_itelic">오렌지</li>
+        <li class="text_bold">감</li>
+    </ul>
+    
+    아이디: <input type="text"/><br>
+    비밀번호: <input type="password"/>
+    <input type="submit" value="등록"/>
+    <input type="checkbox"/>
+    
+    
+</body>
+</html>
+
+<!--
+1. class 의 속성을 먼저 작은 단위로 정의하고 
+2. 이를 나중에 필요할때마다 조합하여 쓰도록 한다. -->
+
+<!--
+/* img 태그 중에서 src 속성값이 png로 끝나는 태그의 border 속성에 3px solid red를 적용*/
+img[src$=png] { border: 3px solid red; }
+-->
+
+

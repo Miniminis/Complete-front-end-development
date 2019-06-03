@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Other Selector</title>
+    <style>
+        /*border radius
+        - 모서리를 둥글게 말아주는 역할을 한다. 
+        - 카카오, 인스타, 페이스북 등 프로필 사진 표시할때 
+        - 좌측상단부터 시계방향으로 4개의 값을 개별적으로 설정해줄수있다. */
+        
+        #cir {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            
+            /*border-radius: 50px 0 0 50px;*/
+            border-radius: 50px; /*원모양으로 표시됨*/
+        }
+        
+        img {
+            /*radius 이용하여 프로필사진처럼 표현! */
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+        }
+        
+        #gnb {
+            /*list-style: dot 의 속성을 변화시켜준다. */
+            list-style: none;
+            overflow: hidden; 
+        }
+        /*float left + overflow: hidden - float 의 범위를 한정시켜줌 */
+        #gnb>li {
+            float:left;
+            /*padding: 5px 25px;*/
+            /*background-color: antiquewhite;*/
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+        
+        #gnb>li:first-child {
+            border-radius: 10px 0 0 10px; /*값이 두개면 1&3번, 2&4번 */
+            background-color:chocolate; 
+        }
+        #gnb>li:last-child {
+            border-radius: 0 10px 10px 0;
+            background-color: chocolate;
+        }
+        #gnb>li:nth-child(2n) {
+            background-color:antiquewhite
+        }
+        
+        #gnb>li:nth-child(2n+1) {
+            background-color: beige
+        }
+        
+        #gnb>li:hover {
+            background-color:pink; 
+        }
+        
+        #gnb>li {
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration-line: none;
+            color:black;
+            display: block; /*a tag의 속성을 block 형태로 바꾸어줌 */
+            padding: 30px 50px;
+        }
+        a:visited {
+            color: black;
+        }
+        a:hover {
+            color: white;
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <ul id="gnb">
+        <li><a href="http://www.naver.com">menu-00</a></li>
+        <li><a href="http://www.naver.com">menu-01</a></li>
+        <li><a href="http://www.naver.com">menu-02</a></li>
+        <li><a href="http://www.naver.com">menu-03</a></li>
+        <li><a href="http://www.naver.com">menu-04</a></li>
+        <li><a href="http://www.naver.com">menu-05</a></li>
+    </ul>  
+    
+    <img src="zootopia_1.jpg">
+    <div id="cir"></div>  
+</body>
+</html>
+
+
+<!--/* input 태그 중에서 type 속성값이 password가 아닌 태그의 background 속성에 red 키워드를 적용합니다.*/
+input:not([type=password]) {
+background: red;
+}-->

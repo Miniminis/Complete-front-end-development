@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent-Child Selector example</title>
+    <style>
+        /*후손 선택자*/
+        #header h1 {
+            color: red;
+        }
+        
+        /*자손선택자 */
+        /*자손과 후손의 범위를 정할때는 보통 id 값을 이용한다.*/
+        #content > h1 {
+            color: yellow;
+            background-color: beige;
+        }
+        #header >h1 {
+            background-color: burlywood;
+        }
+        
+        /*테이블 선택자 방법 */
+        /*<!--table 태그 요소 선택시 주의사항 
+        - 자동으로 tbody 태그가 추가되므로 스타일 속성이 적용되지 않음*/
+        
+        /*table tr > th { 
+            color: red; 
+        }*/
+    
+        table>tbody>tr>th {
+            color: red;
+        }
+        
+        
+        /*동위선택자 h1+ : h1 바로 밑에 있는 태그들 대상 
+        h1~ : h1 바로 뒤의 태그를 대상으로*/ 
+        h1+h2 {
+            color: orange;
+        }
+        h1~h2 {
+            background-color: cornflowerblue;
+        }
+        
+        /*h1 tag 가 가지는 block 전체가 hover의 영역이 된다.*/
+        h1:hover {
+            color: crimson;
+            background-color: chartreuse;
+        }
+        
+        /*동위선택자 이용하여 hover 적용하기 */
+        /*동위 선택자는 "동위 관계"에서 뒤에 위치한 태그를 선택할 때 사용하는 선택자이다.*/
+        h1+h2:hover {
+            color: crimson;
+            background-color: forestgreen;
+        }
+        
+        h1~h2:active {
+            color: purple;
+            background-color: antiquewhite;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Lorem ipsum.</h1>
+            <div>
+                <h1>Navigation</h1>
+            </div>        
+    </div>
+    <div id="content">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur, nisi repudiandae repellendus voluptas dignissimos vero iure, architecto nihil neque suscipit nesciunt reiciendis, quisquam. Officia libero, necessitatibus ex tempore assumenda.</p>
+    </div>
+    
+    <table border="1"> 
+        <tr> 
+            <th>이름</th> 
+            <th>주소</th> 
+        </tr> 
+        <tr> 
+            <td>유영진</td> 
+            <td>서울특별시 서초구</td> 
+        </tr> 
+    </table>
+    
+    <h1>Header - 1</h1> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2>
+    
+</body>
+</html>
+
+
+<!--자손과 후손 선택자 : 하나 이상으로 범위를 한정시키고 싶을때 
+자손: 부모 > 자손 을 통해 포인팅 
+후손: 부모 후손 을 통해 포인팅  
+-->
+
+
+<!--주의사항
+#header h1, #header h2: header 안에 있는 h1, header 안에 있는 h2 
+#header h1, h2: header 안의 h1과 문서 전체에서 h2 -->

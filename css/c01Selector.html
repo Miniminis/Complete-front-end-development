@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector concept</title>
+    <style>
+        * { 
+            /*전체 선택자: 전체 폰트 설정에 자주 사용됨
+            - 폰트 사이즈, 폰트 두께 등 초기설정 */
+        }
+        h1 { 
+            /*태그 선택자 */
+            color: blue;
+        }
+        #header {
+            /*아이디 선택자 
+            중복되지 않는 속성을 부여 
+            - javascript에서 명확하게 해당 값을 포인팅할 수 있도록 중복된 값을 쓰지 않도록 한다. 
+            - javascript 에서 해당 아이디를 문서객체로 만들어줌 
+                - 해당 문서객체의 속성값, 메서드를 사용할 수 있음
+            */
+        }
+        .class {
+            /*클래스 선택자 
+            중복을 허용한다. 
+            우선 스타일을 만들어놓고 --> 그 후에 태그마다 적용. 
+            따라서 작은 단위로 정의를 한 후, 이를 조합해서 사용하는 것이 좋다. 
+            */
+        }
+        /*속성 선택자 
+        선택자[속성]
+        input[type]
+        input[type=text]
+        div[data-role ~= row]
+        div[data-role ^= row]
+        div[data-role $=9]       
+        */
+        
+        /*
+        후손선택자: header h1 
+        자손선택자: header>h1 
+        반응선택자: 
+        - div:active
+        - div:hover - 마우스 동작에 따라 변하는 동작 
+        - input[type=radio].checked
+            - toggle button 연관 
+        - div:not(#title) 
+        */
+        
+        /*
+        동위선택자***
+        : ul+p : ul 바로 뒤에 있는 p 
+        : ul ~ p : ul 아래있는 모든 p 요소를 선택 
+        - 메뉴바 or 페이지에서 마우스의 움직임에 따라 펼쳐지는 리스트 or 화면 표시 할때 이용된다. 
+        
+        가상클래스***
+        : div.after 
+        : div.before 
+        */
+    </style>
+</head>
+<body>
+   <header>
+      <h1>선택자 예시</h1>       
+   </header>
+</body>
+</html>

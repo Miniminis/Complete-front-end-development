@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status Selector</title>
+    <style>
+        /*상태 선택자
+        :checked - 체크 상태의 input tag 선택 
+        :focus - 초점이 맞추어진 input 태그 선택 
+        :enabled - 사용 가능한 input tag 선택 
+        :disabled - 사용 불가능한 input tag 선택
+        */
+        input:enabled {
+            /*커서 모양 설정*/
+            cursor: pointer;
+        }
+        input:disabled {
+            background-color:lightgrey;
+        }
+        input:focus {
+            border: 10px soild purple;
+            background-color: lightgreen;
+        }
+        
+        #menu {
+            display: none; 
+            /*menu id div 아래에 있는 ul 리스트 항목이 보이지 않는다. */
+        }
+        
+        input[type=checkbox]:checked+#menu {
+            /*체크 박스가 선택상태 이고+ 바로밑에있는 #menu 항목이 보이도록 함 */
+            /*input[type=checkbox]:checked+div 확인*/
+            display: block;
+        }
+        
+        /* id 값 안넣고 div tag 설정 
+        div { display: none;}
+        input[type=checkbox]:checked+div{display: block;}
+        */
+        
+        /*체크박스를 화면에 표시하지 않고 메뉴만으로 해당 속성을 보여줄 수도 있다. */
+        input[type=checkbox] {
+            display: none;
+        }
+        
+        label {
+            /*커서 모양 설정*/
+            cursor: pointer;
+        }
+        label:hover {
+            background-color: aqua;
+        }
+    
+    </style>
+</head>
+<body>
+    <input /><br>
+    <input disabled/><br>   
+    <!--<input disabled="disabled"/><br>-->
+    
+    <label for="chk">메뉴</label>
+    <input type="checkbox" id="chk"/>
+    <div id="menu">
+        <ul>
+            <li>홈</li>
+            <li>회사소개</li>
+            <li>서비스소개</li>
+            <li>오시는길 </li>
+        </ul>
+    </div>
+    
+</body>
+</html>
