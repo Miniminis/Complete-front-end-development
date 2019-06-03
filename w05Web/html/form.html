@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Test</title>
+    <style> 
+        form {
+            line-height: 40px;
+        }
+    </style>
+    <script></script>
+</head>
+<body>
+   <h1>Form Tag Practice</h1>
+    <form action="to.html" method="GET"> 
+        <p>Email : <input type="email" name="uEmail" />
+        Password : <input type="password" name="uPASSWORD" />
+        <input type="submit" value="로그인" /></p>
+        <p>Photo : <input type="file" name="uPhoto"/></p> 
+        <p>개인정보 활용동의 : <input type="checkbox"/></p>
+        <p>다중선택을 할때는 radio type <br>짜장면: <input type="radio"/>
+        짬뽕 : <input type="radio"/>
+        우동 : <input type="radio"/> </p>
+        
+        <p><input type="reset" value="reset: 최초 상태로 돌아가기"/></p>
+        <p><input type="hidden" name="nicname" value="tester"/></p>
+        <p>날짜입력 : <input type="date" name="uBirth"/></p>
+        <p>숫자만 입력 : <input type="number" name=uNumber/></p>
+    </form>
+    <br>
+    
+    
+    
+</body>
+</html>
+
+
+<!--action and method
+action: 전송위치(데이터를 전달할 목적지) // 주소 
+method: 전송 방식 //전달 방식(일반편지와 택배)
+- 일반편지: 주소지 공개됨 
+- 택배: 주소지 미공개 -->
+
+<!--GET vs. POST 
+GET: 주소에 데이터를 직접 입력해 전달 //일반편지  
+- http://127.0.0.1:59859/html/to.html?uEmail=minhee4735%40naver.com&uPASSWORD=1111
+POST: 별도의 방법을 사용해 데이터를 해당 주소로 전달 //택배형식 
+- 사용자의 아이디 및 패스워드 등 개인정보가 노출되지 않도록 POST 방식을 사용함. 
+- Cannot POST /html/to.html
+- http://127.0.0.1:59859/html/to.html -->
+
+
+<!--Other tags  
+hidden: 해당 내용 표시 안함 
+reset: 초기 form 의 형태로 돌아감
+textarea: cols, rows 
+select: 생년월일 선택할때  -->
+
+
+<!--GET 방식으로 받은 최종 데이터 내용 
+http://127.0.0.1:59859/html/to.html
+?uEmail=minhee4735%40naver.com
+&uPASSWORD=1111
+&uPhoto=zootopia_2.jpg
+&nicname=tester
+&uBirth=2019-09-20&
+uNumber%2F=1111-->
+
+<!--name값을 써서 데이터가 영역에 맞게 잘 나뉘어 전송될 수 있도록 한다. -->

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup example2</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            margin-top: 200px;
+            background-color:cornsilk;
+        }
+        
+        td#lastrow {
+            text-align: center;
+        }
+        
+        tr#thead {
+            background-color: white;
+        }
+        
+        input {
+            height: 25px;
+        }
+        
+        checkbox {
+            line-height: 20px;
+        }
+    </style>
+    <script></script>
+</head>
+<body>
+    <table border="1">
+           <tr id="thead">
+                <td colspan="2"><h3>회원가입</h3></td>
+            </tr>
+            <tr>
+                <td><label for="name">*이름</label></td>
+                <td><input type="text" id="name"/></td>
+            </tr>
+            <tr>
+                <td><label for="id">*ID</label></td>
+                <td><input type="text" id="id"/></td>
+            </tr>
+            <tr>
+                <td><label for="pw">*비밀번호</label></td>
+                <td><input type="password" id="pw"/></td>
+            </tr>
+            <tr>
+                <td><label for="pwcheck">*비밀번호 확인</label></td>
+                <td><input type="password" id="pwcheck"/></td>
+            </tr>
+            <tr>
+                <td><label for="bYear">*생년월일</label></td>
+                <td><input type="date"/></td>
+            </tr>
+            <tr>
+                <td>*직업</td>
+                <td>
+                    <select>
+                        <option>직업명</option>
+                        <option>기타등등...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>*성별 </td>
+                <td>
+                    <input type="radio"/>남  
+                    <input type="radio"/>여 
+                </td>
+            </tr>
+            <tr>
+                <td>*취미</td>
+                <td>
+                    <input type="checkbox"/> 독서
+                    <input type="checkbox"/> 드라이브
+                    <input type="checkbox"/> 영화<br>
+                    <input type="checkbox"/> 콘서트
+                    <input type="checkbox"/> 쇼핑
+                    <input type="checkbox"/> 놀이동산
+                </td>
+            </tr>
+            <tr>
+                <td>*자기소개</td>
+                <td><textarea row="50" cols="80"></textarea> </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="lastrow">
+                    <input type="submit" value="가입완료"/>
+                    <input type="reset" value="취   소"/>
+                </td>
+            </tr>
+    </table>
+</body>
+</html>
