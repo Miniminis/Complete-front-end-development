@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css3 Attribute</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Jua|Nanum+Gothic:400,700,800|Nanum+Pen+Script&display=swap&subset=korean');
+
+        /*전체 기본폰트 설정 --> 강조부분에만 따로 스타일 적용처리한다. */
+        *, body {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        
+        body {
+            /*background: 이미지 위에 텍스트 표현을 하고 싶을때 사용 
+            - 다른 경우는 그냥 imgage 쓰면 됨 */
+            background-color:antiquewhite;
+            background-image: url(zootopia_1.jpg);
+            background-size: 20%; 
+            /*px, %, contain(높이기준으로 담기), cover(전체꽉차게) */
+            background-repeat:no-repeat;
+            background-position: bottom right; /*문서 내부의 위치*/
+            background-attachment: fixed; /*이미지 화면에 고정*/
+            
+            /*앞의 이미지가 로드되지 않았을때를 위한 두개의 이미지 사용*/
+            /*background-image: url('BackgroundFront.png'), url('BackgroundBack.png');*/
+            /*background-size: 100%, 200%; /* , 를 사용할 경우는 백그라운드를 각각 선택*/
+            
+            /*주의(오류발생): background-size: 100% 250px;*/
+        }     
+        
+        /*p태그에서 먼저 nth-child 를 사용했으므로 h1태그에서는 nth-of-type을 사용해주도록 한다. */
+        /*h1:nth-of-type(1) {
+            font-size: 300%;
+            background-color: rgb(255,0,0);
+            color: rgb(255,255,0);
+        } 
+        h1:nth-of-type(2) {
+            font-size: 1.5em;
+            background-color: rgb(255,255,255,0.5);
+        }
+        h1:nth-of-type(3) {
+            font-size: 24px;
+            background-color: #000000;
+            color: #FFFF00;
+        }*/
+                
+        /*percentage 이용 
+        - 보다 유연한 크기 표현
+        - 공간분할시에 많이 사용됨*/
+        p:nth-child(1) { } /*16 px */
+        p:nth-child(2) { font-size: 100%; } /*16px*/
+        p:nth-child(3) { font-size: 150%; } /*24px*/
+        p:nth-child(4) { font-size: 200%; } /*32px*/
+        
+        /*16진수 em 사용하여 표현 
+        - 보다 유연한 크기 표현
+        - 공간분할시에 많이 사용됨*/
+        p:nth-child(1) { }
+        p:nth-child(2) { font-size: 1.0em; }
+        p:nth-child(3) { font-size: 1.5em; }
+        p:nth-child(4) { font-size: 2.0em; }
+        
+        /*명시적으로 크기 정함*/
+        p:nth-child(1) { }
+        p:nth-child(2) { font-size: 16px; }
+        p:nth-child(3) { font-size: 24px; }
+        
+        #header {
+            height: 600px;
+            width: 500px;
+            background-color: aqua;
+            /*background-image:url(/css/images/zootopia_3.jpg);*/ /*절대경로*/
+        }
+        
+        #loginbox {
+            height: 500px;
+            width: 440px;
+            background-color: aquamarine;
+            
+            /*border, margin, padding 범위 계산 */
+            border: 10px solid black;
+            padding: 10px;
+            margin: 10px;
+            
+            /*배경이미지 적용 */
+            background-image: url(intro/zootopia-4.jpg); /*상대경로*/
+            background-size:300px;
+            background-repeat:no-repeat;
+            /*background-attachment: fixed;*/
+            background-position: 50px 50px;
+            
+        }
+        
+        /*block vs. inline vs. inline-block(margin, height, width 적용가능) 속성 이해 */
+        #loginbox>span, #loginbox>div {
+            border: 1px solid black;
+            height: 100px;
+            width: 50px;
+        }
+        #loginbox>div {
+            display: inline;
+        }
+        #loginbox>span {
+            display: block;
+        }
+        
+        #mid>h1 {
+            font-size: 60px;
+            text-align: center;
+            font-family: 'Jua', sans-serif;
+            line-height: 30px;
+            font-weight: 100;
+            font-style: italic;
+            color: blueviolet;
+        }
+        #mid>h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 40px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        <h1>첫번째 h1 태그입니다.  </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1>두번째 h1 태그입니다. </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1>세번째 h1 태그입니다. </h1>
+    </div>
+    <div id="mid">
+        <h1>구글폰트 적용하기!</h1>
+        <h2>Hi, There! This is Background!</h2>
+    </div>
+    
+    <div id="loginbox">
+            <!--block & inline example -->
+            <span>span inline</span>
+            <div id="box">div block</div>
+            <span>span inline</span>
+    </div>
+    
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit officia error, eius voluptates eveniet nobis debitis? Iure deserunt ipsum explicabo commodi porro perspiciatis provident, odit molestiae voluptatum placeat, voluptate reprehenderit nemo. Tempore dolores, numquam ut quam ipsa, reiciendis explicabo obcaecati fuga veniam eos nobis facere nulla optio facilis doloribus quia qui ipsum, quo iste inventore! Consequatur numquam necessitatibus incidunt modi! Rerum dolorem aut id explicabo voluptas dignissimos, deleniti, rem provident vel vitae, excepturi necessitatibus aperiam nulla distinctio, eligendi non! Ipsam incidunt aliquid, placeat excepturi eos atque laborum suscipit illum dolorum eaque nesciunt. Cumque laborum quaerat officia necessitatibus minima atque hic doloremque tenetur reprehenderit tempore veritatis voluptatem eveniet totam, iste accusamus eos voluptatibus blanditiis quos molestiae dicta aliquam sit natus ab qui. Autem sed sapiente temporibus quibusdam quia laudantium reiciendis eos ipsum, delectus cupiditate mollitia, at repudiandae placeat esse velit nemo incidunt unde, in deserunt aliquid sunt beatae impedit! Consequuntur rerum neque illo similique placeat modi officia quasi, quae qui hic magni! Ipsum aperiam cumque minus blanditiis, quia obcaecati. Et porro nihil fugiat, deserunt delectus quo laborum quam ea ullam. Fugiat modi saepe quasi, quod deserunt cupiditate consequuntur natus sunt, voluptas asperiores. Aliquid dolore itaque ea quasi reiciendis sint iste laboriosam corporis rerum deserunt, aliquam recusandae! Dicta voluptatum iusto nulla culpa corrupti saepe asperiores laudantium tempora porro ducimus aperiam aspernatur, id laborum alias, error ad quidem. Perspiciatis voluptate quae quasi, quia saepe mollitia, temporibus in adipisci quibusdam quos vel nostrum sunt porro debitis dolores deserunt soluta. Consectetur cumque, vitae voluptate quod. Similique, dolor error ipsa temporibus impedit dolorem, odio eaque aut placeat distinctio quas necessitatibus sit asperiores natus corrupti totam! Modi aperiam, earum enim quidem, voluptates temporibus eveniet esse alias totam iure suscipit dolor magni molestias numquam repudiandae veniam dicta eaque, facere consequatur quibusdam magnam voluptatibus! Eius deleniti illo aliquid dolorem, laudantium odio? Sed iste id dolores dicta ex quod voluptatum aliquam corrupti possimus placeat nihil quaerat veritatis aut ullam doloribus nam, commodi! Doloremque pariatur id optio dolorum ipsum, ratione molestiae sapiente molestias asperiores iusto nesciunt deserunt, numquam dignissimos ea voluptate nemo. Culpa, libero vitae! Enim nam quisquam tempore repellat. Voluptatem tempora ullam reprehenderit facere nihil, quos minus labore ducimus eaque possimus! Vel repudiandae similique unde in obcaecati accusamus, voluptates quibusdam ut neque corporis quam facilis vero aliquam provident illo, sint. Quaerat possimus molestias asperiores sapiente dolor cum tenetur, esse omnis fuga veritatis quae minus officiis beatae in sint saepe laboriosam, ipsum quos corrupti vitae dolore? Quasi eveniet aperiam autem, consectetur harum, sapiente ducimus aliquam repudiandae fugit, ullam quas. Doloribus repellendus ullam maxime. Consequatur expedita perspiciatis labore, temporibus provident eos, corporis saepe molestias accusamus, porro, qui nostrum recusandae reiciendis dolor? Optio aspernatur nobis consectetur omnis voluptatem. Inventore ullam consequuntur, assumenda totam quasi ipsam, vero blanditiis neque, corrupti veniam rem at omnis quisquam? A suscipit ab quae accusamus quaerat ea maiores nihil cum, hic laudantium aliquid repellendus velit quibusdam quidem, modi? Minus nesciunt voluptas libero, hic nulla perspiciatis aliquid maxime veniam necessitatibus magni voluptatem soluta nemo culpa ad possimus adipisci aut quasi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit officia error, eius voluptates eveniet nobis debitis? Iure deserunt ipsum explicabo commodi porro perspiciatis provident, odit molestiae voluptatum placeat, voluptate reprehenderit nemo. Tempore dolores, numquam ut quam ipsa, reiciendis explicabo obcaecati fuga veniam eos nobis facere nulla optio facilis doloribus quia qui ipsum, quo iste inventore! Consequatur numquam necessitatibus incidunt modi! Rerum dolorem aut id explicabo voluptas dignissimos, deleniti, rem provident vel vitae, excepturi necessitatibus aperiam nulla distinctio, eligendi non! Ipsam incidunt aliquid, placeat excepturi eos atque laborum suscipit illum dolorum eaque nesciunt. Cumque laborum quaerat officia necessitatibus minima atque hic doloremque tenetur reprehenderit tempore veritatis voluptatem eveniet totam, iste accusamus eos voluptatibus blanditiis quos molestiae dicta aliquam sit natus ab qui. Autem sed sapiente temporibus quibusdam quia laudantium reiciendis eos ipsum, delectus cupiditate mollitia, at repudiandae placeat esse velit nemo incidunt unde, in deserunt aliquid sunt beatae impedit! Consequuntur rerum neque illo similique placeat modi officia quasi, quae qui hic magni! Ipsum aperiam cumque minus blanditiis, quia obcaecati. Et porro nihil fugiat, deserunt delectus quo laborum quam ea ullam. Fugiat modi saepe quasi, quod deserunt cupiditate consequuntur natus sunt, voluptas asperiores. Aliquid dolore itaque ea quasi reiciendis sint iste laboriosam corporis rerum deserunt, aliquam recusandae! Dicta voluptatum iusto nulla culpa corrupti saepe asperiores laudantium tempora porro ducimus aperiam aspernatur, id laborum alias, error ad quidem. Perspiciatis voluptate quae quasi, quia saepe mollitia, temporibus in adipisci quibusdam quos vel nostrum sunt porro debitis dolores deserunt soluta. Consectetur cumque, vitae voluptate quod. Similique, dolor error ipsa temporibus impedit dolorem, odio eaque aut placeat distinctio quas necessitatibus sit asperiores natus corrupti totam! Modi aperiam, earum enim quidem, voluptates temporibus eveniet esse alias totam iure suscipit dolor magni molestias numquam repudiandae veniam dicta eaque, facere consequatur quibusdam magnam voluptatibus! Eius deleniti illo aliquid dolorem, laudantium odio? Sed iste id dolores dicta ex quod voluptatum aliquam corrupti possimus placeat nihil quaerat veritatis aut ullam doloribus nam, commodi! Doloremque pariatur id optio dolorum ipsum, ratione molestiae sapiente molestias asperiores iusto nesciunt deserunt, numquam dignissimos ea voluptate nemo. Culpa, libero vitae! Enim nam quisquam tempore repellat. Voluptatem tempora ullam reprehenderit facere nihil, quos minus labore ducimus eaque possimus! Vel repudiandae similique unde in obcaecati accusamus, voluptates quibusdam ut neque corporis quam facilis vero aliquam provident illo, sint. Quaerat possimus molestias asperiores sapiente dolor cum tenetur, esse omnis fuga veritatis quae minus officiis beatae in sint saepe laboriosam, ipsum quos corrupti vitae dolore? Quasi eveniet aperiam autem, consectetur harum, sapiente ducimus aliquam repudiandae fugit, ullam quas. Doloribus repellendus ullam maxime. Consequatur expedita perspiciatis labore, temporibus provident eos, corporis saepe molestias accusamus, porro, qui nostrum recusandae reiciendis dolor? Optio aspernatur nobis consectetur omnis voluptatem. Inventore ullam consequuntur, assumenda totam quasi ipsam, vero blanditiis neque, corrupti veniam rem at omnis quisquam? A suscipit ab quae accusamus quaerat ea maiores nihil cum, hic laudantium aliquid repellendus velit quibusdam quidem, modi? Minus nesciunt voluptas libero, hic nulla perspiciatis aliquid maxime veniam necessitatibus magni voluptatem soluta nemo culpa ad possimus adipisci aut quasi.</p>
+        
+    </div>
+    
+    
+</body>
+</html>
+
+<!--CSS3 단위 
+1. 키워드: h1 {속성: 키워드} 의 형태로 표현. 자동완성. 
+
+2. 크기 : 
+- pixel
+- percentage : 다양한 기기에서 적용 가능 
+    - width, height 속성: 주로 block 단위의 속성에 많이 사용 
+    
+3. 색상 : 
+- #00/00/00 HEX 코드 단위 - 0~255 표현: RGB 색상 조합을 16진수로 입력 
+- rgb(red, green, blue) RGB 색상 단위: 0부터 255사이의 숫자를 입력
+- rgba(red, green, blue, alpha(0.0<1)) RGBA 색상 단위
+    - 알파 값은 투명도를 나타냄 0.0 ~ 1.0 사이의 숫자  
+
+4. URL : background 경로 처리 
+ * c09Css3Attrinute.html 가 현재file 이라면 예시 
+- 절대경로: 요청하는 파일의 루트폴더를 기준으로:  /html/image/zootopia_3.jpg
+- 상대경로: 현재 file을 기준으로 - images/zootopia_3.jpg
+현재 file은 c09Css3Attrinute.html 이고 이는 images와 같은 레벨에 존재. 
+따라서 images 부터 접근 가능
+
+* company_info.html 가 현재file 이라면 예시 
+- 절대경로: /html/images/zootopia_3.jpg
+- 상대경로: ../images/zootopia_3.jpg 
+    - intro folder 안에 있으니까 images 폴더에 바로 접근 물가
+    - 한단계 상위 폴더로 이동하여 images와 같은 레벨로 맞춰준 후에 zootopia_3.jpg에 접근하도록 한다. 
+
+***절대경로/상대경로 장단점 비교     
+- 절대경로: 경로 설정 과정에서 실수가 적지만 경로를 알기가 힘들고 추가작업시 유지보수에 어려움
+- 상대경로: 경로설정과정에서 실수 가능성이 높지만 유지보수에 쉽다. 
+-->
+
+<!--block 과 inline 속성 : 
+* display: block - 무조건 행의 시작에서 끝까지 
+1. div
+2. h1-h6
+3. p
+4. body 
+5. 시멘틱태그
+6. 목록태그
+7. 테이블 태그
+8. 입력양식태그: form 
+
+* display: inline - 콘텐츠만 감싸고 있는 형태 
+1. span 
+2. a
+3. input 
+4. 글자형식태그 
+5. image 
+-->
+
+
+<!--width & height
+- 원래 기본 값은 block 이므로 행의 시작과 끝가지 영역을 차지한다. 
+- 두 값의 크기 조정은 표현하고자하는 범위만 한정해줄 뿐, 실제 차지하는 공간은 여전히 행의 시작과 끝, 즉 block 이다. -->
+
+
+<!--border 속성 
+- border-width 
+- border-style 
+- border-width, border-style, border-color 속성 한 번에 입력 가능
+
+- 화면에 보이는 것:
+    전체너비 = width +2*(margin+border+padding)
+    전체너비 = height +2*(margin+border+padding)
+-->
+
+
+<!--font 속성 
+- font-family 속성을 여러 개 입력: 사용자의 컴퓨터에 글꼴이 없는 경우 대비
+- google font, naver 나눔고딕 : 돋움, 고딕체가 주로 쓰인다. 좋은 가독성때문 
+- .font_roman { font-family: 'Times New Roman'; } 띄어쓰기 시에는 작은따옴표 사용 
+- .font_arial { font-family: '없는 폰트', Arial; } 
+- .font_roman { font-family: 'Times New Roman', Arial; }
+-->
+
+
+<!--line-height 속성
+ - 줄간격 
+ - 글자를 수직정렬 할때 사용 
+- -->

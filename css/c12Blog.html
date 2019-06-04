@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        /*div {
+            border: 1px solid black;
+        }*/
+        #wrapper {
+            margin: 10px 300px;
+        }
+        #container {
+            border: 8px solid lightgray;
+            padding: 25px;
+        }
+        #header {
+            border-radius: 5px 5px 0 0;
+            padding: 30px 0 0 50px;
+            line-height: 10px;
+        }
+        
+        #navbar {
+            overflow: hidden;   
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            
+        }
+        
+        .mainnav {
+            margin: 0;
+        }
+    
+        .mainnav>li {
+            list-style: none;
+            float: left;      
+        }
+        
+        .navbar-button {
+            display: block;
+            width: 60px;
+            height: 26px;
+            border-radius: 10px;
+            padding: 15px 25px;
+            text-align: center;
+            line-height: 26px;
+            text-decoration: none;      
+            font-weight: bold;
+            color:darkgray;
+        }
+        .navbar-button:hover {
+            color: gray;
+            background-color:antiquewhite;
+        }
+        
+        .searchnav {
+            float: right;
+        }
+        
+        .searchnav>input[type=search],  {
+            mar
+        }
+        
+        #content {
+            overflow: hidden;
+        }
+        
+        #content>img {
+            width: 400px;
+            height: 400px;
+        }
+        
+        #img-size {
+            width: 
+        }
+        
+        #main-content {
+            float: left;
+            width: 70%;
+            padding: 10px 30px;
+            border-bottom: 1px solid lightgray;
+        }
+        
+        #asidebar {
+            float: right;
+            width: 20%;
+            padding: 10px 17px;
+        }
+        .asidebar-list {
+            list-style: none;
+        }
+        
+        .asidebar-list a{
+            text-decoration: none;
+        }
+        
+        #footer {
+            border-radius: 0 0 5px 5px;
+            padding: 20px;
+        }
+        #footer a {
+            text-decoration: none; 
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+   <div id="wrapper">
+   <div id="container">
+        <div id="header">
+            <h1>HTML5 Example Preview</h1>
+            <h5>한빛아카데미</h5>
+        </div>
+        <div id="navbar">
+            <ul class="mainnav">
+                <li><a href="#" class="navbar-button" >HTML5</a></li>
+                <li><a href="#" class="navbar-button">CSS3</a></li>
+                <li><a href="#" class="navbar-button">JavaScript</a></li>
+            </ul>
+            <ul class="searchnav">
+                <input type="search"/>
+                <input type="button" value="검색"/>
+            </ul>
+        </div>
+        <div id="content">
+           <div id="main-content">
+               <h2>HTML5 개요와 활용</h2>
+                <p>2019년 6월 4일</p>
+                <img src="zootopia_1.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maiores, aliquid saepe dolore suscipit iusto fugit dolores, magnam enim ipsa qui expedita delectus totam sapiente dolorum vel, modi culpa quisquam praesentium! Doloremque ab, eaque earum eveniet laudantium laboriosam repellendus error molestiae. Beatae similique ratione porro veniam unde eum incidunt, voluptatibus cupiditate, recusandae vero voluptate magnam ipsam assumenda numquam vitae dolor nobis eligendi dolorum deleniti voluptatem repellat magni? Similique fugiat suscipit, consectetur illo maiores, atque laboriosam numquam recusandae. Laboriosam beatae eum animi quia! Cumque vero, doloremque eius ullam corrupti. Molestias quia quis repellendus ipsum deleniti eveniet nam id fugit excepturi aut.</p>
+                <hr>
+                <h2>HTML5 응용과 실습</h2>
+                <p>2019년 6월 4일</p>
+                <img src="zootopia_2.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maiores, aliquid saepe dolore suscipit iusto fugit dolores, magnam enim ipsa qui expedita delectus totam sapiente dolorum vel, modi culpa quisquam praesentium! Doloremque ab, eaque earum eveniet laudantium laboriosam repellendus error molestiae. Beatae similique ratione porro veniam unde eum incidunt, voluptatibus cupiditate, recusandae vero voluptate magnam ipsam assumenda numquam vitae dolor nobis eligendi dolorum deleniti voluptatem repellat magni? Similique fugiat suscipit, consectetur illo maiores, atque laboriosam numquam recusandae. Laboriosam beatae eum animi quia! Cumque vero, doloremque eius ullam corrupti. Molestias quia quis repellendus ipsum deleniti eveniet nam id fugit excepturi aut.</p>
+           </div>
+           <div id="asidebar">
+              <h3>#카테고리</h3>
+              <ul class="asidebar-list">
+                <li><a href="#">데이터</a></li>  
+                <li><a href="#">데이터</a></li>
+                <li><a href="#">데이터</a></li>
+                <li><a href="#">데이터</a></li>
+                <li><a href="#">데이터</a></li>                
+              </ul>
+               <br>
+                <h3>#최신글</h3>    
+                <ul class="asidebar-list">
+                    <li><a href="#">데이터</a></li>
+                    <li><a href="#">데이터</a></li>
+                    <li><a href="#">데이터</a></li>
+                </ul>
+           </div>  
+        </div>
+        <div id="footer">
+            <p><a href="#">Created by Minhee Son</a></p>
+        </div>
+   </div>
+   </div>  
+</body>
+</html>
+
+<!--조건분석
+1. border: radius, gray 
+2. bgc 
+- div wrapper 
+3. div1: header
+- h1 제목
+- h5 부제 
+- 여백 표시 
+4. div2: nav
+- ul 1: float-left 
+- ul 2: float-right 
+- overflow hidden 속성 적용 
+5. div3: content
+- main block : title, date, image, article 
+- aside block 
+6. div4: footer -->

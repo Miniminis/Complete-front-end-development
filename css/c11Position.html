@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        /*초기화*/
+        * {
+            /*브라우저가 갖는 기본 여백을 제거함 */
+            margin: 0; 
+            padding: 0;
+        }
+        /* position 속성 
+        - absolute : 좌표를 이용하여 요소를 원하는 곳에 위치시킬 수 있음
+            - 하지만 왜곡 발생의 위험이 있음 
+        - z-index: 숫자가 클수록 앞에 위치한다. 
+        */   
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black; 
+            position: absolute;
+        }
+        #box1 {
+            background-color: red;
+            left: 20px;
+            top: 20px;
+            z-index: 1000000000000000000;
+        }
+        #box2 {
+            background-color: blue;
+            left:40px;
+            top: 40px;
+            z-index: 100000;
+        }
+        #box3 {
+            background-color: green;
+            left: 60px;
+            top: 60px;
+            z-index: 10;
+        }
+        
+        /*자손이 absolute 속성을 가지고 있다면 
+        1. 부모가 height 속성을 가지고 
+        2. 부모가 relative 속성을 가지고
+        3. overflow 속성: 
+        => 부모의 범위 안에 들어올 수 있다.  */
+        #wrap {
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+            overflow: auto; 
+            /*overflow: - auto;사이즈가 넘어가면 스크톨 생성, 아니면 안생성
+            - overflow-y; */
+        }
+        
+        /*float 속성 - 일정 부분 이하 영향 안받게 하기
+        1. h3 { clear: both; }
+        2. 
+        */
+        .img {
+            width: 30%;
+            height: 20%;
+            float: left;
+            margin: 10px;
+        }
+        /*방법1*/
+        h3 {
+            clear: both;
+        }      
+        /*방법2*/
+        .wrap {
+            overflow: hidden;
+        }
+        
+        /*box-shodow 예시 */
+        .wrap>h1 {
+            margin: 10px 30px;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+   <h1>header</h1>
+   
+   <div id="wrap">
+       <div id="box1" class="box"></div>
+       <div id="box2" class="box"></div>
+       <div id="box3" class="box"></div>
+   </div>
+   
+   <div class="wrap"> 
+      <img src="intro/zootopia-4.jpg" class="img">
+      <h1>zootopia</h1>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam in, earum cum a omnis quo esse voluptas consectetur est ad accusamus quis aliquam ullam voluptates exercitationem laboriosam, incidunt. Accusantium esse, recusandae eligendi impedit suscipit iste perspiciatis, unde sapiente maxime praesentium aut nostrum deleniti aliquid distinctio, quam molestias commodi. </p>   
+   </div>
+  <!--플래시부터는 float 정상처리 -->  
+   <h3>플래시</h3>
+   <h1>footer</h1>
+   
+</body>
+</html>

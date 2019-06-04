@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>button</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean');
+        
+        #container {
+            padding: 200px;
+            /*border: 1px solid black;*/
+        }
+        #container>h1 {
+            text-align: center;
+        }
+        #container>p {
+            line-height: 200%;
+        }
+        #btn {
+            width: 200px;
+            height: 100px;
+            background-color:orange;
+            border: 10px solid #DDDDDD;
+            border-radius: 25px;  
+            /*버튼 내부에 click 텍스트 가운데 정렬 - 수직, 수평 모두*/
+            text-align: center;
+            line-height: 100px;
+            font-style: italic;
+            /*margin: auto auto;*/ /*수직으로는 가운데 정렬 안됨 */
+            margin: 10% auto;
+         
+        }
+        #btn>a { /*a는 inline 속성 --> text-align 사용불가*/
+            font-size: 130%;
+            font-weight: bold;    
+            text-decoration: none;
+            /*text-align: center;*/
+            color: white;
+            display: block;
+        }
+        #btn:hover {
+            background-color:darkorange;
+            border-color: coral;
+            font-style: normal;
+            /*cursor: pointer;*/       
+        }
+        
+        #btn2 {
+            background-image: url(zootopia_1.jpg);
+            width: 300px;
+            height: 300px;
+            border: 10px solid orange;
+            border-radius: 500px;
+            border-style: inset;
+            text-align: center;
+            line-height: 300px;
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            font-size: 300%;
+            font-family: 'Jua', sans-serif;
+            text-decoration: none;
+            color:orange;
+            display: block;
+        }
+        #btn2:hover {
+            border: 10px solid darkorange;
+            font-style: italic;
+            color: darkorange;
+        }
+        
+        #btn3 {
+            background-image: url(zootopia_2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            border: 10px solid skyblue;
+            border-radius: 500px;
+            text-align: center;
+            line-height: 300px;
+            position: absolute;
+            left: 65%;
+            top: 50%;
+            text-decoration-color: skyblue;
+            font-size: 300%;
+            font-family: 'Jua', sans-serif;
+            text-decoration: none;
+            color:skyblue;
+            display: block;
+        }
+
+        #btn3:hover {
+            border: 10px solid darkblue;
+            font-style: italic;
+            color: darkblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>제목</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas illo magnam commodi, tempore, natus itaque quo. Nemo possimus voluptate perspiciatis dicta cum perferendis corporis aut provident et ipsum recusandae nisi dolor, laboriosam, itaque, mollitia commodi officiis explicabo, maiores consectetur. Aliquam, odit sequi est, laborum alias natus rem magnam! At obcaecati perspiciatis sed ratione neque facilis, deleniti. Quidem, voluptatibusLorem ipsum dolor sit amet, consectetur adipisicing elit. Quas illo magnam commodi, tempore, natus itaque quo. Nemo possimus voluptate perspiciatis dicta cum perferendis corporis aut provident et ipsum recusandae nisi dolor, laboriosam, itaque, mollitia commodi officiis explicabo, maiores consectetur. Aliquam, odit sequi est, laborum alias natus rem magnam! At obcaecati perspiciatis sed ratione neque facilis, deleniti. Quidem, voluptatibus</p>
+        
+        <div id="btn">
+            <a href="#">제출</a>
+        </div>
+        <a href="zootopia_1.jpg" id="btn2">플래시</a>
+        <a href="zootopia_2.jpg" id="btn3">주디</a>
+
+    </div>
+</body>
+</html>
