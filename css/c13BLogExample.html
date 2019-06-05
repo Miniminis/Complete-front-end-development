@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NavBar Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            border: 1px solid black;
+        }
+        
+        #header {
+            padding: 25px;
+            font-size: 36px; /*h1 tag와 동일한 효과!*/
+            font-weight: bold; /*h1 tag와 동일한 효과!*/
+            background-color:aliceblue;
+        }
+        
+        #nav {
+            border-top: 3px solid darkblue;
+            border-bottom: 3px solid darkblue;
+            height: 30px;
+            overflow: hidden;
+        }
+        
+        #nav>ul {
+            list-style: none;
+            /*margin: 0;*/
+        }
+        
+        #nav>ul>li {
+            float: left;
+            line-height: 30px;
+            padding: 0 15px;
+        }
+        #nav a {
+            text-decoration: none;
+            color: lightblue;
+            font-weight: bold;
+        }
+        
+        #wrap {
+            clear: both; /*nav 영역에 영향 받지 않기 위함 */
+            overflow: hidden; /*footer 영역에 영향을 주지 않고, wrap 내부의 영역에만 영향을 주기 위함 */
+        }
+        
+        #content {
+            float: left;
+            width: 70%;
+            height: 250px;
+        }
+        #aside {
+            float: right;
+            width: 25%;
+            height: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+   <!--헤더 시작-->
+    <div id="header">헤더</div>
+    
+    <!--네비게이션 시작-->
+    <div id="nav">
+        <ul>
+            <li><a href="#">menu-00</a></li>
+            <li><a href="#">menu-01</a></li>
+            <li><a href="#">menu-02</a></li>
+            <li><a href="#">menu-03</a></li>
+            <li><a href="#">menu-04</a></li>
+        </ul>
+    </div>
+    <div id="wrap">
+        <div id="content">콘텐츠</div>
+        <div id="aside">광고</div>
+    </div>
+    <div id="footer">footer</div>
+</body>
+</html>

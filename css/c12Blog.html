@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog</title>
+    <script src="https://kit.fontawesome.com/744ccfa256.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Yeon+Sung&display=swap');
+
         /*div {
             border: 1px solid black;
         }*/
-        #wrapper {
-            margin: 10px 300px;
+        
+        /*초기화 필요 - 적용하는 스타일이 잘 먹을 수 있도록*/
+        /** {
+            margin: 0;
+            padding: 0;
+        }*/
+        
+        body {
+            background-color: lightcoral;
         }
         #container {
+            width: 938px;
+            margin: 100px auto;
             border: 8px solid lightgray;
+            border-radius: 5px;
             padding: 25px;
+            background-color: antiquewhite;
+            box-shadow: 10px 10px 10px;
         }
         #header {
             border-radius: 5px 5px 0 0;
             padding: 30px 0 0 50px;
             line-height: 10px;
         }
+        #header>h1 {
+            font-family: 'Yeon Sung', cursive;
+        }
+        #header>h5 {
+            color: darkgray;
+            font-weight: normal;
+        }
         
         #navbar {
             overflow: hidden;   
             border-top: 1px solid lightgray;
-            border-bottom: 1px solid lightgray;
-            
+            border-bottom: 1px solid lightgray;  
         }
         
         .mainnav {
@@ -50,48 +71,67 @@
         }
         .navbar-button:hover {
             color: gray;
-            background-color:antiquewhite;
+            background-color:bisque;
         }
         
         .searchnav {
+            margin: 0;
+        }
+        .searchnav>li {
+            list-style: none;
             float: right;
         }
-        
-        .searchnav>input[type=search],  {
-            mar
+
+        .searchnav input[type=search]  {
+            margin: 0;
+            height: 30px;
+            border-radius: 5px 0 0 5px;
+            margin: 13px 0 13px 0;
+            padding: 10px;
+        }
+        .searchnav input[type=button] {
+            margin: 0;
+            height: 30px;
+            border-radius: 0 5px 5px 0;
+            text-align: right;
+            text-decoration-color: lightgray;
+            margin: 13px 0 13px 0;
+            cursor: pointer;
         }
         
         #content {
             overflow: hidden;
         }
         
-        #content>img {
+        #content img {
             width: 400px;
             height: 400px;
-        }
-        
-        #img-size {
-            width: 
+            margin: 10px 5px;
         }
         
         #main-content {
             float: left;
-            width: 70%;
+            width: 68%;
             padding: 10px 30px;
             border-bottom: 1px solid lightgray;
+        }
+        #main-content p {
+            margin: 10px 5px;
         }
         
         #asidebar {
             float: right;
-            width: 20%;
-            padding: 10px 17px;
+            width: 18%;
+            padding: 10px 20px;
         }
         .asidebar-list {
             list-style: none;
+            padding-left: 18px;
         }
         
         .asidebar-list a{
             text-decoration: none;
+            color:black;
         }
         
         #footer {
@@ -105,7 +145,6 @@
     </style>
 </head>
 <body>
-   <div id="wrapper">
    <div id="container">
         <div id="header">
             <h1>HTML5 Example Preview</h1>
@@ -118,22 +157,22 @@
                 <li><a href="#" class="navbar-button">JavaScript</a></li>
             </ul>
             <ul class="searchnav">
-                <input type="search"/>
-                <input type="button" value="검색"/>
+               <li><input type="button" value="검색"/></li>
+               <li><span><input type="search" placeholder="search" class=""/></span></li>
             </ul>
-        </div>
+        </div> <!--header end-->
         <div id="content">
            <div id="main-content">
                <h2>HTML5 개요와 활용</h2>
                 <p>2019년 6월 4일</p>
-                <img src="zootopia_1.jpg">
+                <img src="zootopia_1.jpg"> 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maiores, aliquid saepe dolore suscipit iusto fugit dolores, magnam enim ipsa qui expedita delectus totam sapiente dolorum vel, modi culpa quisquam praesentium! Doloremque ab, eaque earum eveniet laudantium laboriosam repellendus error molestiae. Beatae similique ratione porro veniam unde eum incidunt, voluptatibus cupiditate, recusandae vero voluptate magnam ipsam assumenda numquam vitae dolor nobis eligendi dolorum deleniti voluptatem repellat magni? Similique fugiat suscipit, consectetur illo maiores, atque laboriosam numquam recusandae. Laboriosam beatae eum animi quia! Cumque vero, doloremque eius ullam corrupti. Molestias quia quis repellendus ipsum deleniti eveniet nam id fugit excepturi aut.</p>
                 <hr>
                 <h2>HTML5 응용과 실습</h2>
                 <p>2019년 6월 4일</p>
-                <img src="zootopia_2.jpg">
+                <img src="intro/zootopia-4.jpg"> <!---->
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maiores, aliquid saepe dolore suscipit iusto fugit dolores, magnam enim ipsa qui expedita delectus totam sapiente dolorum vel, modi culpa quisquam praesentium! Doloremque ab, eaque earum eveniet laudantium laboriosam repellendus error molestiae. Beatae similique ratione porro veniam unde eum incidunt, voluptatibus cupiditate, recusandae vero voluptate magnam ipsam assumenda numquam vitae dolor nobis eligendi dolorum deleniti voluptatem repellat magni? Similique fugiat suscipit, consectetur illo maiores, atque laboriosam numquam recusandae. Laboriosam beatae eum animi quia! Cumque vero, doloremque eius ullam corrupti. Molestias quia quis repellendus ipsum deleniti eveniet nam id fugit excepturi aut.</p>
-           </div>
+           </div> <!--main-content END-->
            <div id="asidebar">
               <h3>#카테고리</h3>
               <ul class="asidebar-list">
@@ -150,13 +189,12 @@
                     <li><a href="#">데이터</a></li>
                     <li><a href="#">데이터</a></li>
                 </ul>
-           </div>  
-        </div>
+           </div> <!--asidebar END-->
+        </div> <!--content end -->
         <div id="footer">
             <p><a href="#">Created by Minhee Son</a></p>
-        </div>
-   </div>
-   </div>  
+        </div>  <!--footer end-->
+   </div> <!--container end-->
 </body>
 </html>
 
@@ -176,3 +214,22 @@
 - main block : title, date, image, article 
 - aside block 
 6. div4: footer -->
+
+
+<!--초기화코드 
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+} 
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none;}
+-->
