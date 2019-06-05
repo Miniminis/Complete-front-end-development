@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: azure;
+}
+
+@media screen and (max-width:767px) {
+    body {
+        background-color: red;
+    }
+}
+@media screen and (min-width:768px) and (max-width:959px) {
+    body {
+        background-color: blue;
+    }
+}
+@media screen and (min-width:960px) {
+    body {
+        background-color: purple;
+    }
+}
+
+
+
+/*   @media screen 
+@media screen and (max-wdith:767px) {
+    html {
+        backgroun: red; 
+        color: while; font-weight:bold;
+    }
+}
+@media screen and (min-width:768px) and (max-wdith:959px) {
+    html {
+        background: green;
+        color: white; 
+    }
+}
+
+***** orientation 속성을 사용하면 특정한 화면 방향에서의 스타일을 적용할 수 있다.
+
+*/
