@@ -1,0 +1,74 @@
+div {
+    border: 0.2px solid black;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+#header {
+    width: 100%;
+    height: 84px;
+    background-color: #3D5A99;
+}
+
+#header-content {
+    width: 1000px;
+    height: 84px;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+#header-content>img {
+    width: 240px;
+    height: 84px;
+    float: left;
+}
+#header-content>table {
+    float: right;
+}
+
+#signup {
+    width: 100%;
+    height: 573px;
+    background-color: #D8DCEA;
+}
+
+#signup-wrapper {
+    width: 1000px;
+    height: 573px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#signup-wrapper img {
+    float: left;
+    margin: 50px 0;
+}
+#signup-wrapper>table {
+    float: right;
+    height: 573px;
+}
+#signup-network {
+    width: 45%;
+    height: 573px;
+    float: left;
+    padding: 15px;
+}
+
+#signup-form {
+    width: 45%;
+    float: right;
+}
+#footer {
+    width: 100%;
+    height: 195px;
+    background-color: #FFFFFF;
+}
+#footer-content {
+    width: 1000px;
+    height: 195px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#footer-content>ul>li {
+    float: left;
+}
