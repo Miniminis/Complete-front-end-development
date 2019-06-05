@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Yeon+Sung&display=swap');
+
+/*div {
+    border: 1px solid black;
+}*/
+
+/*초기화 필요 - 적용하는 스타일이 잘 먹을 수 있도록*/
+/** {
+    margin: 0;
+    padding: 0;
+}*/
+
+body {
+    background-color: lightcoral;
+}
+#container {
+    width: 938px;
+    margin: 100px auto;
+    border: 8px solid lightgray;
+    border-radius: 5px;
+    padding: 25px;
+    background-color: antiquewhite;
+    box-shadow: 10px 10px 10px;
+}
+#header {
+    border-radius: 5px 5px 0 0;
+    padding: 30px 0 0 50px;
+    line-height: 10px;
+}
+#header>h1 {
+    font-family: 'Yeon Sung', cursive;
+}
+#header>h5 {
+    color: darkgray;
+    font-weight: normal;
+}
+
+#navbar {
+    overflow: hidden;   
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;  
+}
+
+.mainnav {
+    margin: 0;
+}
+
+.mainnav>li {
+    list-style: none;
+    float: left;      
+}
+
+.navbar-button {
+    display: block;
+    width: 60px;
+    height: 26px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    line-height: 26px;
+    text-decoration: none;      
+    font-weight: bold;
+    color:darkgray;
+}
+.navbar-button:hover {
+    color: gray;
+    background-color:bisque;
+}
+
+.searchnav {
+    margin: 0;
+}
+.searchnav>li {
+    list-style: none;
+    float: right;
+}
+
+.searchnav input[type=search]  {
+    margin: 0;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+    margin: 13px 0 13px 0;
+    padding: 10px;
+}
+.searchnav input[type=button] {
+    margin: 0;
+    height: 30px;
+    border-radius: 0 5px 5px 0;
+    text-align: right;
+    text-decoration-color: lightgray;
+    margin: 13px 0 13px 0;
+    cursor: pointer;
+}
+
+#content {
+    overflow: hidden;
+}
+
+#content img {
+    width: 400px;
+    height: 400px;
+    margin: 10px 5px;
+}
+
+#main-content {
+    float: left;
+    width: 68%;
+    padding: 10px 30px;
+    border-bottom: 1px solid lightgray;
+}
+#main-content p {
+    margin: 10px 5px;
+}
+
+#asidebar {
+    float: right;
+    width: 18%;
+    padding: 10px 20px;
+}
+.asidebar-list {
+    list-style: none;
+    padding-left: 18px;
+}
+
+.asidebar-list a{
+    text-decoration: none;
+    color:black;
+}
+
+#footer {
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+}
+#footer a {
+    text-decoration: none; 
+    color: blue;
+}
