@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>절대좌표 레이아웃</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+        
+        /*position attribute 
+        - #box: 부모 - position: relative
+        - .cir: 자손 - position: absolute 
+        - top, bottom, right, left : 각 위치에서 *px 떨어트리겠다!*/
+        #box {
+            border: 1px solid black;
+            width: 50%; /*50% 배율로 설정하여 유동적으로 표현 가능 */
+            /*width: 700px - 절대적으로 설정 */
+            height: 500px;
+            position: relative;
+            padding: 30px;
+        }
+        .cir {
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+            border-radius: 50px;
+            position: absolute;
+        }
+        
+        #box>div:nth-child(1) {
+            background-color: red;
+        }
+        #box>div:nth-child(2) {
+            background-color: green;
+            right: 30px;
+        }
+        #box>div:nth-child(3) {
+            background-color: yellow;
+            bottom: 30px;
+        }
+        #box>div:nth-child(4) {
+            background-color: blue;
+            right: 30px;
+            bottom: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Dummy Text</h1>
+    <div id="box">
+        <div class="cir"></div>
+        <div class="cir"></div>
+        <div class="cir"></div>
+        <div class="cir"></div>
+    </div>
+    <h1>Dummy Text</h1>
+</body>
+</html>

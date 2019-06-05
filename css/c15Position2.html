@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>중앙정렬</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Amatic SC', cursive;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+        #main_wrap {
+            /*사용자 모니터: 960px* */
+            width: 500px;
+            height: 400px;
+            padding: 30px;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color:cornsilk;
+            box-shadow: 10px 10px 10px; /*right, top, blurr*/
+            /*margin: 0 auto;*/
+            
+            /*wrap 페이지의 가운데 정렬 */
+            position: absolute;
+            left: 50%; 
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -200px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #main_wrap>h1 {
+            font-size: 36px;
+        }
+        #main_wrap table {
+            margin: 30px auto;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #main_wrap hr {
+            border: 0;
+            border-top: 1px solid #DDD;
+            margin: 20px 0;
+        }
+        input {
+            width: 200px;;
+            height: 30px;
+            border-radius: 3px;
+        }
+        
+        #button>input{
+            display: block;
+            width: 260px;
+            font-size: 20px;
+            margin: 8px;
+            padding: 5px;
+        }
+        #button>input:nth-child(1) {
+            margin-top: 30px;
+            background-color: lightskyblue;
+        }
+        #button>input:nth-child(2) {
+            background-color: indianred;
+        }
+        #login-footer {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+   <div id="main_wrap">
+       <h1>Log In</h1>
+       <hr>
+       <form>
+           <table>
+               <tr> 
+                   <td>ID:</td>
+                   <td><input type="text"/></td>
+               </tr>
+               <tr> 
+                   <td>Password: </td>
+                   <td><input type="password"/></td>
+               </tr>
+               <tr>
+                   <td colspan="2" id="button">
+                       <input type="submit" value="Log In"/>
+                       <input type="reset" value="Cancel"/>
+                       <!--<button>제출의 기능</button>-->
+                    </td>   
+               </tr>
+           </table>
+           <hr>
+           <div id="login-footer">
+               <a href="#">Sign Up |</a>
+               <a href="#">Find ID |</a>
+               <a href="#">Find Password </a>
+           </div>
+       </form>
+   </div>
+    
+</body>
+</html>
