@@ -2,72 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-wdith, initial-scale=1.0"/>
     <title>Facebook - 로그인 또는 가입</title>
     <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div id="header">
        <div id="header-content">
            <img src="logo.PNG">
-           <table>
+           <form action="login" method="GET" >
+               <table>
                 <tr>
-                    <td>이메일 또는 휴대폰</td>
-                    <td>비밀번호</td>
+                    <td><label for="id">이메일 또는 휴대폰</label></td>
+                    <td><label for="pw">비밀번호</label></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><input type="text"/></td>
-                    <td><input type="password"/></td>
+                    <td><input type="text"/ name="email or phoneNum" id=id></td>
+                    <td><input type="password"/ name="password" id="pw"></td>
                     <td><input type="submit" value="로그인"/></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>계정을 잊으셨나요?</td>
+                    <td><a href="#">계정을 잊으셨나요?</a></td>
                     <td></td>
                 </tr>
             </table>
+           </form>
        </div>
     </div>
     <div id="signup">
         <div id="signup-wrapper">
-           <div id="signup-network">
+           <div>
               <h3>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</h3>
               <img src="network.PNG"/>
            </div>
-            <form id="signup-form">
+            <form action="signup" method="GET">
                <h1>가입하기</h1>
-               <h4>항상 지금처럼 무료로 즐기실 수 있습니다.</h4>
+               <h3>항상 지금처럼 무료로 즐기실 수 있습니다.</h3>
                 <table>
                     <tr>
-                        <td><input type="text" placeholder="성(姓)"/></td>
-                        <td><input type="text" placeholder="이름(성은 제외)"/></td>
+                        <td><input type="text" placeholder="성(姓)" name="fstname"/></td>
+                        <td><input type="text" placeholder="이름(성은 제외)" name="lstname"/></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="text" placeholder="휴대폰 번호 또는 이메일"/></td>
+                        <td colspan="2"><input type="text" placeholder="휴대폰 번호 또는 이메일" name="pnumORemail"/></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="text" placeholder="새 비밀번호"/></td>
+                        <td colspan="2"><input type="text" placeholder="새 비밀번호" name="password"/></td>
                     </tr>
                     <tr>
                         <td>생일</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="date"/>  왜 생년월일을 입력해야하나요?</td>
+                        <td colspan="2">
+                            <input type="number" min="1905" max="2019" placeholder="연도" name="byear"/>
+                            <input type="number" min="1" max="12" placeholder="월" name="bmonth">
+                            <input type="number" min="1" max="31" placeholder="일" name="bday">
+                            <a href="#">왜 생년월일을 입력해야하나요?</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="radio"/> 여성  <input type="radio"/> 남성</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">가입하기 버튼을 클릭하면 Facebook의 <a href="#">약관</a>, <a href="#">데이터 정책</a> 및 <a href="#">쿠키 정책</a>에 동의하게 됩니다. Facebook으로부터 SMS 알림을 받을 수 있으며 알림은 언제든지 옵트 아웃할 수 있습니다.</td>
-                    </tr>
-                    <tr>
-                        <td><a><input type="submit" value="가입하기"/></a></td>
+                        <td>성별</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>유명인, 밴드, 비즈니스를 위한 <a href="#">페이지 만들기</a></td>
+                        <td colspan="2">
+                            <input type="radio" name="gender" value="여성"/> 여성  
+                            <input type="radio" name="gender" value="남성"/> 남성 
+                            <input type="radio" name="gender" value="직접지정"/> 직접 지정 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>가입하기 버튼을 클릭하면 Facebook의<a href="#"> 약관</a>, <a href="#">데이터 정책</a> 및 <a href="#">쿠키 정책</a>
+                            에 동의하게 됩니다. Facebook으로부터 SMS 알림을 받을 수 있으며 알림은 언제든지 옵트 아웃할 수 있습니다.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="가입하기"/></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">유명인, 밴드, 비즈니스를 위한 <a href="#">페이지 만들기</a></td>
                     </tr>
                 </table>
             </form>
@@ -76,9 +96,21 @@
     <div id="footer">
         <div id="footer-content">
            <table>
-               <tr><a href="#">한국어</a><a href="#">English (US)</a><a href="#">Tiếng Việt</a><a href="#">Bahasa Indonesia</a><a href="#">ภาษาไทย</a><a href="#">Español</a><a href="#">中文(简体)</a><a href="#">日本語</a><a href="#">Português (Brasil)</a><a href="#">Français (France)</a><a href="#">Deutsch</a><input type="button" value="+"/></tr>
-               <tr><a href="#">가입하기</a><a href="#">로그인</a><a href="#">Messenger</a><a href="#">Facebook Lite</a><a href="#">사람</a><a href="#">프로필</a><a href="#">페이지</a><a href="#">페이지 카테고리</a><a href="#">이벤트</a><a href="#">장소</a><a href="#">게임</a><a href="#">위치</a><a href="#">Marketplace</a><a href="#">그룹</a><a href="#">Instagram</a><a href="#">지역</a><a href="#">기부 캠페인</a><a href="#">서비스</a><a href="#"> 회사소개</a><a href="#">광고 만들기</a><a href="#">페이지 만들기</a><a href="#">개발자</a><a href="#">기부 캠페인</a><a href="#">채용 정보</a><a href="#">개인정보처리방침</a><a href="#">쿠키</a><a href="#">AdChoices</a><a href="#">이용 약관</a><a href="#">계정 보안</a><a href="#">로그인 도움말</a><a href="#">고객 센터</a></tr>
-               <tr><p>Facebook © 2019</p></tr>
+               <tr>
+                  <td>
+                      <a href="#">한국어</a><a href="#">English (US)</a><a href="#">Tiếng Việt</a><a href="#">Bahasa Indonesia</a><a href="#">ภาษาไทย</a><a href="#">Español</a><a href="#">中文(简体)</a><a href="#">日本語</a><a href="#">Português (Brasil)</a><a href="#">Français (France)</a><a href="#">Deutsch</a><input type="button" value="+"/>
+                      <hr>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>
+                      <a href="#">가입하기</a><a href="#">로그인</a><a href="#">Messenger</a><a href="#">Facebook Lite</a><a href="#">사람</a><a href="#">프로필</a><a href="#">페이지</a><a href="#">페이지 카테고리</a><a href="#">이벤트</a><a href="#">장소</a><a href="#">게임</a><a href="#">위치</a><a href="#">Marketplace</a><a href="#">그룹</a><a href="#">Instagram</a><a href="#">지역</a><a href="#">기부 캠페인</a><a href="#">서비스</a><a href="#"> 회사소개</a><a href="#">광고 만들기</a><a href="#">페이지 만들기</a><a href="#">개발자</a><a href="#">기부 캠페인</a><a href="#">채용 정보</a><a href="#">개인정보처리방침</a><a href="#">쿠키</a><a href="#">AdChoices</a><a href="#">이용 약관</a><a href="#">계정 보안</a><br><a href="#">로그인 도움말</a><a href="#">고객 센터</a>
+                  </td>
+                </tr>
+               <tr>
+                   <td>Facebook © 2019</td>
+               </tr>
            </table>
         </div>
     </div>

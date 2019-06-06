@@ -1,0 +1,17 @@
+@media screen and (max-wdith:767px) {
+    html {
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:959px) {
+    html {
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:960px) {
+    html {
+        height: 100%;
+    }
+}
