@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+    <title>javascript</title>
+    <meta charset="utf-8">
+    <script>
+        alert("hello, js!");
+
+        /*간단한 연산*/
+        var pi = 3.141592;
+        var r = 10;
+        alert('원의 둘레는: '+pi*2*r);
+
+        /*변수의 설정 */
+        var v;
+        var num= 10;
+        var str = 'hello, javascript! ';
+        var bool = true;
+        var functionType = function(){};
+        var objectType = {};
+
+        alert(v); //undefined
+        alert(num); //number
+        alert(str); //string 
+        alert(bool); //boolean
+        alert(functionType); //function type
+        alert(objectType); //Object type  //[object Object]
+        
+        /*자바스크립트 코드 위치 
+        - head 태그 사이에 위치
+        - 하지만 요즘에는 body 태그 내부에 위치시키는 것이 보통이다. 
+        - html이 웹에 다 표현이 되고 나서 나타날 수 있도록 한다. 
+            - html 파일은 쓰여진 순서대로 읽기 때문
+        - HTML5에서는 script 태그에 type 속성을 적지 않는 게 보통
+        */
+
+        /*javascript 키워드 
+        - 대부분 java 와 비슷함 
+        - delete, function
+        - instanceof, typeof(타입)
+        - var(변수): 대입연산이 실행되는 시점에 변수의 특성이 정의가 된다. 
+            - 자바는 변수의 타입과 공간을 미리 만들어 놓고 사용했었다. 
+            - 변수의 타입이 다른 데이터도 저장될 수 있다. 
+        */
+
+        /*식별자 생성규칙 
+        - 의미있는 단어 사용 
+        - 생성자 함수의 이름은 대문자로 시작 
+                function Act {...} 
+
+        * 식별자 구분하기 
+        alert("helloworld"); - 매서드 
+        - window.alert() 
+        Array.length
+        input 
+        propmt("Message", "Defstr")
+        Math.PI 
+        Math.abs(-273)  
+        */
+
+        /*alert() 
+        - (
+        1. 숫자 - 정수와 실수 모두를 포함하는 숫자표현 
+        2. 문자: 문자열과 똑같이 사용됨. 문자열과 구분하지 않는다. 
+        3. 문자열('작은따옴표사용') 
+        4. blooean - true/false 
+        5. 연산의 결과 
+        )
+        */
+
+        /*문자열 비교
+        • 국어사전의 앞 쪽에 있을 수록 값이 작음
+        - '가방' > '하마' --> false 
+        *불끼리의 크기 비교
+        - 자바스크립트는 true를 1 / false를 0으로 변환 후 비교 연산
+        - alert(true>false); >> alert(1>0); 따라서 true
+        */
+
+        /*변수
+        1. 변수 선언: 변수를 만듦
+        2. 변수에 값 할당 - 변수의 타입이 결정됨 
+        3. 자료형 종류: 
+        - 문자열
+        - 숫자
+        - 불리언
+        - 함수
+        - 객체   ;;
+        - undefined 
+
+        * undefined variable 
+        var x; //변수가 정의되지 않았음 = undefined 
+        x = 10;  // 변수가 생성되는 시점 
+        1. 변수가 위에서 미선언 되었을때 
+        2. 변수 초기화가 되지 않았을때 
+        */
+
+        /*변수는 하나만 담을 수 있음*/
+    </script>
+</head>
+<body>
+    <h1>Title H1</h1>
+</body>
+</html>

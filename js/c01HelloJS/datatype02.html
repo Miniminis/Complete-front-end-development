@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        
+        var v;
+        var num= 10;
+        var str = 'hello, javascript! ';
+        var bool = true;
+        var functionType = function(){};
+        var objectType = {};
+        
+        /*입력 Confirm( ) 함수 */
+        /*window ~ : body부분에 내용을 추가하는 함수를 정의했으므로 제일 나중에 실현된다. */
+        window.onload = function(){
+            var input = confirm('정말 삭제하시겠습니까?'); //삭제의사 물어보기
+            //alert(input); //true 반환 
+            if(input) {     //true 반환 한다면, 
+                var list ='';
+                list += '<ul>\n';
+                list += '   <li>' + v + '</li>\n';
+                list += '   <li>' + num + '</li>\n';
+                list += '   <li>' + str + '</li>\n';
+                list += '   <li>' + bool + '</li>\n';
+                list += '   <li>' + functionType + '</li>\n';
+                list += '   <li>' + objectType + '</li>\n';
+                list += '</ul>\n';
+                //alert(list);
+                //document.body.innerHTML='document.body.innerHTML';
+                document.body.innerHTML = list;
+                } 
+            }
+        
+        /*confirm() 함수 흐름 정리
+        - window.onload = function() {
+            var input = confirm('정말 삭제하시겠습니까?');
+            //input에 true 대입됨 
+            if(input) {
+                list ... 
+                document.body.innerHTML = list; //html body 안에 list 연산결과를 추가하겠음. 
+            }
+        }
+        */
+        
+        
+        /*문자열과 숫자를 곱하는 자료형
+        - 더하기 연산자를 제외한 사칙 연산자는 숫자가 우선
+        - 사칙연산시 형변환의 과정을 줄여주는 역할 
+        alert('52'*273);
+        alert('52'*'273');
+        
+        /*자동형변환 
+        - 덧셈연산: 문자열+다른형 = 문자열 우선 
+        - 다른 연산: 문자열 + 숫자 = 숫자 우선 */
+        
+        /*강제형변환
+        1. 문자에서 숫자: Number()
+        2. 다른 자료형에서 문자: String() 
+        * typeof() 통해서 자료형 비교해볼 수 있다. 
+        */
+        
+        /*prompt() 함수: 문자열만 입력 가능. 다른 형은 무조건 문자열로 자료형 변환 */
+        var strInput = prompt('숫자를 입력해주세요. ');
+        
+        alert(typeof(strInput));
+        
+        /*Number() 함수
+        - 숫자로 바꾸려면 Number() 함수 사용
+        - 문자열로 입력받고 숫자로 변환
+        */
+        var num1 = '30'; 
+        var num2 = '30a';
+        var num3 = Number(num1);
+        alert(num3); //30 숫자형 
+        var num4 = Number(num2); 
+        alert(num4); //NaN(Not a Number) 값 출력 : 숫자가 아닌 값 입력 시
+        
+        var num5 = prompt('숫자입력을 부탁');
+        var num6 = Number(num5);
+        alert(typeof(num6));
+
+        /*String() 함수 
+        - 다른 자료형을 string type 으로 변환함 */
+
+        /*Boolean 함수 false 일때 */
+        alert(Boolean(0));
+        alert(Boolean(NaN));
+        alert(Boolean(''));
+        alert(Boolean(null));
+        alert(Boolean(undefined));
+        alert(Boolean('0'));
+        alert(Boolean('false'));
+        
+        alert(!!0); //false를 두 번 부정하여 다시 false 가 출력됨 
+        
+        /*일치 연산자
+        - 자료형이 다른 것을 확실하게 구분짓고 싶을때 사용함.  
+        */
+        
+        alert(''===false);    // 모두 false. 자료형이 다르기 때문에
+        alert('' ===0);
+        alert(0 === false);
+        alert('273'=== 273);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

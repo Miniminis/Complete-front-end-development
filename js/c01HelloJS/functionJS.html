@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function.JS</title>
+    <script>
+        //익명함수 : 변수 선언 = 익명의 함수정의;
+        var f1 = function(){
+            alert('f1 함수 호출')
+        }
+        //선언적함수 : 이름이 있는 함수 정의  
+        function f2 () {
+            alert('f2 함수 호출 ');
+        }
+        alert(typeof(f1)); //함수타입
+        alert(typeof(f2)); //함수타입
+        f1(); //함수호출 
+        f2(); //함수호출 
+        
+        /*선언적 함수의 재정의 
+        - 함수를 정의한 다음에 다시 해당 함수를 똑같이 정의하면 2번째 함수의 형태로 다시 함수가 정의된다. */
+        
+        /*매개변수와 리턴값*/
+        function add(x, y) {
+            return x+'+'+y+'='+(x+y);
+        }
+        alert(add(10, 20)); 
+        
+        /*가변인자함수
+        - 매개변수의 개수가 변할 수 있는 함수 
+        - 매개변수가 선언된 형태와 다르게 사용했을때 매개변수를 모두 활용하는 함수를 의미한다. 
+        - 대표적인 예시: Array() sumAll() */
+        
+        /*Array() 함수 */
+        var arr1 = new Array(); //빈배열 생성
+        var arr2 = new Array(10); //매개변수만큼의 크기를 가지는 배열  
+        var arr3 = new Array(1, 2, 3, 4, 5);  //매개변수를 배열로 
+        
+        alert(typeof(arr1)+ ' : '+ arr1.length); //0
+        alert(typeof(arr2)+ ' : '+ arr2.length); //10
+        alert(typeof(arr3)+ ' : '+ arr3.length); //5
+        
+        for(var i=0; i<arr3.length; i++) {
+            alert(arr3[i]);
+        }
+        
+        
+        /*sumAll() 함수 */
+        function sumAll() {
+            var sum = 0; 
+            var str ='';
+            for(var i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+                str += ' '+arguments[i];
+            }
+            return str +'의 합은'+ sum;
+        }
+        
+        alert(sumAll(1, 2, 3, 4, 5)); //1,2,3,4,5 를 배열로 만듬
+  
+        /*callback ()  */
+        function callTenTimes(callBack) {
+            for(i=0; i<10; i++) {
+                callBack();
+            }
+        }
+        
+        /*콜백함수 선언적 정의*/
+        var callBack = function(){
+            alert('callBack 함수 실행 ');
+        }
+        
+        /*콜백함수를 익명함수로 정의*/
+        callTenTimes(function() {
+            alert('콜백함수를 익명함수로 정의');
+        })
+        
+        /*내장함수  alert() prompt() */
+        
+        /*숫자변환함수 
+        - 변환할 수 있는 부분까지 모두 숫자로 변환*/
+       var won = '1000원'; 
+       var dollor = '1.5$';
+       
+       var n1 = Number(won); 
+       var n2 = Number(dollor); //Numver() 함수는 숫자로 바꿀 수 없으면 NaN 으로 변환하기 때문에 한계가 있음. 
+       
+       var n3 = parseInt(won); //string을 정수로 바꿈 
+       var n4 = parseInt(dollor); 
+       
+       var n5 = parseFloat(won); //string을 실수로 바꿈 
+       var n6 = parseFloat(dollor);
+       
+       alert(n1+':'+n2); //Nan : Nan
+       alert(n3+':'+n4); //1000: 1 
+       alert(n5+':'+n6); //1000: 1.5
+        
+        
+        
+        /*코드 실행 함수 eval() */
+        var newScript ='';
+        newScript += 'var num7=10;'; 
+        newScript += 'alert(num7)';
+        
+        eval(newScript);
+        
+    </script>
+</head>
+<body>
+   
+   <script>
+       /*타이머 함수*/
+        /*setTimeout(function, millisecond); //특정시간 후 함수 한번실행
+        setInterval(function, millisecond); //일정시간마다 함수를 반복
+        clearTimeout(id); //일성시간 후 함수를 한번 실행하는 것을 중지 
+        clearInterval(id); //일정시간마다 함수를 반복하는 것을 중단*/
+        
+        var number = 0;
+
+        var sId = setInterval(function() {
+            document.body.innerHTML = '<h1>+'number'+</h1>';
+            number++;
+            if(number>10) {
+                clearInterval(sId);
+            }
+        }, 1000);
+       
+       
+    </script>
+    
+</body>
+</html>
+
+
+<!--매개변수와 리턴값: 리턴값의 자료형이나 매개변수의 자료형을 명시해주지 않는다. 
+function(x) { return 리턴값}  >>>  호출시: f(3); 
+-->

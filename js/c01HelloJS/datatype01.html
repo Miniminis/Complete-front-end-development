@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        
+        /*복합대입 연산자의 사용*/
+        /*event handler - function 함수 사용 */
+        /*원래는 function 함수이름 형태로 정의되어야 하지만, "onload" 라는 속성이 있기 때문에 그냥 익명함수의 형태를 써준다. */
+        
+        var v;
+        var num= 10;
+        var str = 'hello, javascript! ';
+        var bool = true;
+        var functionType = function(){};
+        var objectType = {};
+        
+        /*변수 list를 빈 문자열로 초기화 한 후, 
+        복합대입연산자를 사용해 문자열을 만들고 
+        HTML 문서의 body 태그에 넣는다! */
+        window.onload = function(){
+            var list ='';
+            list += '<ul>\n';
+            list += '   <li>' + v + '</li>\n';
+            list += '   <li>' + num + '</li>\n';
+            list += '   <li>' + str + '</li>\n';
+            list += '   <li>' + bool + '</li>\n';
+            list += '   <li>' + functionType + '</li>\n';
+            list += '   <li>' + objectType + '</li>\n';
+            list += '</ul>\n';
+            //alert(list); //list 에 연산 결과가 제대로 반영되었는지 확인
+            //document.body.innerHTML='document.body.innerHTML';
+            document.body.innerHTML = list;
+
+        };
+
+        /*type of 자료형 검사 
+        - undefined: 정의하지 않는 자료형을 의미한다. 
+        - 선언하지 않은 식별자 alpha 사용 */
+        alert(typeof(v));
+        alert(typeof(str));
+        alert(typeof({}));
+        alert(typeof(alpha)); //undefined 정의하지않은 자료형
+        
+        /*promt()*/
+        var input = prompt("아이디를 확인해주세요!", "0000@naver.com");
+        
+        alert(input);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
