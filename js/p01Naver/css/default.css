@@ -16,6 +16,10 @@ a {
     text-decoration: none;
 }
 
+i {
+    color: #8E8E8E;
+}
+
 /*header style*/
 #header, #content, #footer {
     margin: 0 auto;
@@ -169,7 +173,7 @@ a {
 
 
 /*footer style*/
-#footer{
+#footer, .footer{
     margin-top: 30px;
     text-align: center;
     font-size: 13px;
@@ -178,10 +182,10 @@ a {
     font-weight: 800px;
 }
 
-#footer a{
+.footer a{
     color: #7E7E7E;
 }
 
-#footer a:nth-child(2) {
+.footer a:nth-child(2) {
     font-weight: bold;
 }
