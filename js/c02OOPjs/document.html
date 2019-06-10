@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object</title>
+    <script>
+
+        /*<!--노드
+        1. 요소 노드: img 
+        - 생성: createElement(tagName) 
+        2. 텍스트 노드: h1, p 
+        - 생성: createTextNode(text) 
+
+        - appendChild(node) : 객체에 노드를 연결함. 
+        -->*/
+        
+        
+        window.onload = function() {
+            
+            /*시계만들기*/
+            var clock = document.getElementById('clock');
+            
+            setInterval(function(){
+                clock.innerHTML = new Date().toString();
+            }, 1000);
+            
+            clock.innerHTML = new Date();
+            
+            
+            /*텍스트 노드를 갖는 문서 객체 */
+            var header = document.createElement('h2');
+            var textNode = document.createTextNode('hello, js!');
+            
+            header.appendChild(textNode);
+            //document.body.appendChild(header);
+            
+            var content = document.createElement('p');
+            var conTextNode = document.createTextNode('this is paragraph. please read carefully. ');
+            
+            content.appendChild(conTextNode);
+            //document.body.appendChild(content);
+            
+            
+            /*텍스트 노드를 갖지 않는 문서 객체 - 이미지태그 생성*/
+            var img = document.createElement('img');
+            img.src = '../../html/zootopia_1.jpg';
+            img.width = 100;
+
+            //document.getElementById('msg').appendChild(img);
+            
+            /*문서객체 케스팅: TAG 를 문서객체로 만드는 것*/
+            var h1 = document.getElementById('msg'); 
+            
+            var innerhtml = h1.innerHTML; 
+            
+            /*h1 태그의 내용과 스타일을 변경 */
+            h1.innerHTML ='<span style="color:red">새로운 엘리멘트 </span>';
+            
+            //alert(typeof(h1));
+            //alert(typeof(innerhtml));
+            
+            /*여러개의 문서객체 배열로 가져오기 getElementsByTagName()*/
+            /*여러개의 문서객체 배열로 가져오기: document.querySelector(선택자), document.querySelectorAll(선택자)  */
+            
+            var div1 = document.querySelector('#text');
+            div1.innerHTML = '안녕하세요';
+            div1.style.color = 'blue';
+            
+            var p1 = document.querySelector('.title');
+            p1.innerHTML = '제목입니다. ';
+            p1.style.backgroundColor = 'gray';
+            
+            /*태그삭제: 
+            1. 삭제 대상 캐스팅
+            2. 삭제 대상의 부모태그를 캐스팅
+            3. 부모 태그 객체 - removeChild(삭제대상 객체) */
+            
+            if(confirm('삭제하시겠습니까? ')) {
+                var r = document.querySelector('#remove'); //삭제 대상 캐스팅 
+                document.body.removeChild(r);
+            } 
+            
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="msg">hi</h1>
+    <div id="text">text</div>
+    <p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vero ipsam, aspernatur non at! Illum, inventore, beatae est ratione repellendus aut illo quaerat sed error nisi consequatur modi. Laudantium cupiditate nam odio earum possimus, consectetur dicta maiores, sit et enim exercitationem fugit harum unde laboriosam. Placeat, soluta corporis! Eius deserunt rerum voluptatem, ipsum inventore delectus architecto ipsam ea commodi reprehenderit dolor similique consequatur quis ullam magni accusantium unde voluptate sint quod consectetur, praesentium nemo voluptates ut voluptas. Excepturi sapiente vero rem quaerat, quidem dolor doloribus, distinctio, nihil ut autem ad! Eveniet corporis deserunt doloremque unde est nisi saepe molestiae, at!</p>
+    
+    <h1 id="remove">이 태그는 곧 지워질 예정입니다.</h1>
+    
+    <h1 id="clock"></h1>
+</body>
+</html>
+
+<!--문서객체 생성방법 
+1. 정적으로 문서 객체를 생성: 처음 html 페이지에 적혀있는 태그들을 읽으면서 생성 
+2. 동적으로 문서갱체를 생성: 자바스크립트로 원래 html 페이지에는 없던 문서 객체를 생성 -->
+
+

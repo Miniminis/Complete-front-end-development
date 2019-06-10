@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script>
+        window.onload = function() {
+            /*데이터는 JSON을 이용하여 처리된다. 
+            - 자바스트립트 형태로 받아온 데이터를 JSON 형태로 처리 : stringify() 
+            - JSON 형태의 문자열 데이터를 다시 Js 형태로 읽어서 처리: perse() */
+            
+            /*JSON id값을 이용하여 이용하여 HTML 파일 내부의 데이터 읽어들임*/
+            var h1_str = document.getElementById("json").innerHTML;
+            //alert(h1_str);
+            //document.getElementById("json").innerHTML = "change HTML contents";
+            
+            var book = {
+                name: '열혈자바',
+                price: 10000, 
+                publisher: '오렌지미디어'
+            };
+            /*위의 자바스트립트 객체 book을 JSON 형식의 문자열로 변환*/
+            var obj_JSON = JSON.stringify(book);
+            document.getElementById("json").innerHTML = obj_JSON; //HTML 내부의 내용이 JSON 문자열 형식으로 내용변경됨 
+            
+            /*JSON 형식의 문자열을 다시 javascript 형식으로 바꿈 */
+            var newJSON = '{"name":"열혈자바","price":10000,"publisher":"오렌지미디어"}';
+            var newJS = JSON.parse(newJSON); //다시 자바 스트립트 형식으로 바뀜 
+            alert(newJS.name);
+            alert(newJS.price);
+            alert(newJS.publisher);
+
+        };
+    </script>
+</head>
+<body>
+    <h1 id="json">JSON 연습중입니다. </h1>
+</body>
+</html>
+
+
+<!--JSON 데이터 
+1. 문법: "데이터 이름": 값, 으로 나열함 
+- stringify() 
+- parse() 
+-->
