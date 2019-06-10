@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oop03</title>
+    <script>
+        /*상속:  __proto__  */
+        var kim = {
+            name: 'kim', 
+            kor: 90, 
+            eng:100,
+            sum: function() {
+            return this.kor + this.eng;
+            }
+        }
+        var lee = {
+            name:'lee', 
+            kor: 40, 
+            eng: 50,
+            avg : function() {
+            return (this.kor+this.eng)/2
+            }
+        }
+            
+        lee.__proto__ = kim;
+        //alert(lee.sum());
+        //alert(lee.avg());
+
+        /*상속: Object.create()*/
+        var lee = Object.create(kim);
+        //alert(lee.sum()); //kim을 상속만 받고 lee의 정보를 재정의 하지 않았기 때문에 kim의 정보로 표시됨
+        //alert(lee.avg()); //kim을 상속만 받고 lee의 정보를 재정의 하지 않았기 때문에 avg() 존재하지 않음
+        lee.name = 'lee';
+        lee.kor = 40;
+        lee.eng = 50;
+        lee.avg = function() {
+            return (this.kor+this.eng)/2;
+        }
+        
+        //alert(lee.sum()); //lee의 정보로 표시됨
+        //alert(lee.avg()); //lee에서 추가 정의한 함수 avg() 가 정상 실행됨 
+        
+        /*call() 과 bind()*/
+        
+        
+        
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<!--prototype과 __proto__
+        
+Student (부모) 
+- prototype 
+
+Student's prototype
+- constructor 
+- sum() 
+
+kim 
+- __proto__ (to 부모의 prototype)
+- name
+- kor
+- eng
+
+lee
+- __proto__ (to 부모의 prototype)
+- name
+- kor
+- eng
+
+=======================
+function Student(name, kor, eng) {
+this.name = name;
+this.kor = kor;
+this.eng=eng;
+}
+Student.prototype.sum = function() {}
+var kim = new Student('kim', 90, 100,);
+var lee = new Student('lee', 40, 50,);
+
+alert(kim.name); // kim
+alert(kim.sum()); //부모의 prototype 으로 연결됨. (student's prototype의 sum() 호출됨)
+
+-->
+       
+       
+        

@@ -4,7 +4,112 @@
     <meta charset="UTF-8">
     <title>oop2</title>
     <script>
-        /*상속:  __proto__  */
+        /*배열과 객체 */
+        var arr = ['john', 'thomas', 'jin'];
+        
+        var obj = {
+            name: 'john',
+            age: 20,
+            job: 'programer',
+        }
+        
+        /*배열과 객체의 for-loop*/
+        var arrSum = '';
+        for(var i=0; i<arr.length; i++) {
+            arrSum += arr[i]+ '    ';
+        };
+        //alert(arrSum);
+        
+        var objSum = '';
+        for(var key in obj) {
+            objSum += key+ ' : '+obj[key]+'\n';
+        }
+        //alert(objSum);
+        
+        /* 객체 생성 */
+        var kim = {
+            name:'kim',
+            kor: 90,
+            eng: 100, 
+            math: 100
+        }
+        
+        var lee = {
+            name: 'lee',
+            kor:40, 
+            eng: 100, 
+            math: 50
+        }
+        
+        var sum = '';
+        for(var key in kim) {
+            sum += key+' : '+kim[key];
+        }
+        for(var key in lee) {
+            sum += key+' : '+lee[key];
+        }
+        //alert(sum);
+        
+        /*생성자 함수 function () */
+        function Student(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            /*this.sum = function() {
+                return this.kor + this.eng+ this.math;
+            }*/
+        }
+        Student.prototype.sum = function() {
+            return this.kor+this.eng+this.math;
+        }
+                
+        var kim = new Student('kim', 90, 100, 100);
+        kim.sum = function() { //kim의 sum() 만 재정의 가능
+            return this.kor*this.eng*this.math;
+        }
+        var lee = new Student('lee', 40, 100, 50);
+        //alert(kim.sum());
+        //alert(lee.sum());
+        
+        /*class 의 이용*/
+        class StudentInfo {
+            constructor(name, kor, eng, math) {
+                this.name = name;
+                this.kor = kor;
+                this.eng = eng;
+                this.math = math;
+            }
+            sum() {
+                return this.kor+this.eng+this.math;
+            }
+            
+        }
+                
+        var kim = new StudentInfo('kim', 90, 100, 100);
+        var lee = new StudentInfo('lee', 40, 100, 50);
+        //alert(kim.sum());
+        //alert(lee.sum());
+        
+        /*상속*/
+        class StudentInfoPlus extends StudentInfo {
+            constructor(name, kor, eng, math, sci) {
+                super(name, kor, eng, math);
+                this.sci = sci;
+            }
+            sum() {
+                return super.sum() + this.sci;
+            }
+            avg() {
+                return this.sum()/4;
+            }
+        }
+        
+        var kim = new StudentInfoPlus('kim', 90, 100, 100, 90);
+        var lee = new StudentInfoPlus('lee', 40, 100, 50, 20);
+        //alert(kim.sum()+' : '+kim.avg());
+        //alert(lee.sum()); 
+        
     </script>
 </head>
 <body>

@@ -184,33 +184,6 @@
         var p = new Ractangle(20, 40); 
         //alert(p.getArea()); //800
         
-        
-        /*class
-        - 객체를 만드는 공장! */
-        class Person  {
-            constructor(name, num) {
-                this.name = name;
-                this.num = num;
-            }
-            sum() {
-                return this.name+ ':' +this.num;
-            }
-        };
-        
-        var son = new Person("minhee", 30);
-        var jin = new Person("jiin", 100);
-        alert(son.sum());
-        alert(jin.sum());
-        
-        class PersonPlus extends Person{
-            agv() {
-                return this.name+'====='+this.num;
-            }
-        }
-        
-        var son2 = new PersonPlus("minhee", 500);
-        alert(son2.agv());
-        
     </script>
 </head>
 <body>
