@@ -100,7 +100,7 @@ i {
 
 /*생년월일 width 값 에러 미해결*/
 #content tr:nth-child(10) td {
-    width: 30%;
+    width: 20%;
 }
 
 #content tr:nth-child(17) td, 

@@ -12,10 +12,10 @@
         function f2 () {
             alert('f2 함수 호출 ');
         }
-        alert(typeof(f1)); //함수타입
-        alert(typeof(f2)); //함수타입
-        f1(); //함수호출 
-        f2(); //함수호출 
+        //alert(typeof(f1)); //함수타입
+        //alert(typeof(f2)); //함수타입
+        //f1(); //함수호출 
+        //f2(); //함수호출 
         
         /*선언적 함수의 재정의 
         - 함수를 정의한 다음에 다시 해당 함수를 똑같이 정의하면 2번째 함수의 형태로 다시 함수가 정의된다. */
@@ -24,7 +24,7 @@
         function add(x, y) {
             return x+'+'+y+'='+(x+y);
         }
-        alert(add(10, 20)); 
+        //alert(add(10, 20)); 
         
         /*가변인자함수
         - 매개변수의 개수가 변할 수 있는 함수 
@@ -36,9 +36,9 @@
         var arr2 = new Array(10); //매개변수만큼의 크기를 가지는 배열  
         var arr3 = new Array(1, 2, 3, 4, 5);  //매개변수를 배열로 
         
-        alert(typeof(arr1)+ ' : '+ arr1.length); //0
-        alert(typeof(arr2)+ ' : '+ arr2.length); //10
-        alert(typeof(arr3)+ ' : '+ arr3.length); //5
+        //alert(typeof(arr1)+ ' : '+ arr1.length); //0
+        //alert(typeof(arr2)+ ' : '+ arr2.length); //10
+        //alert(typeof(arr3)+ ' : '+ arr3.length); //5
         
         for(var i=0; i<arr3.length; i++) {
             alert(arr3[i]);
@@ -56,7 +56,7 @@
             return str +'의 합은'+ sum;
         }
         
-        alert(sumAll(1, 2, 3, 4, 5)); //1,2,3,4,5 를 배열로 만듬
+        //alert(sumAll(1, 2, 3, 4, 5)); //1,2,3,4,5 를 배열로 만듬
   
         /*callback ()  */
         function callTenTimes(callBack) {
@@ -67,12 +67,12 @@
         
         /*콜백함수 선언적 정의*/
         var callBack = function(){
-            alert('callBack 함수 실행 ');
+            //alert('callBack 함수 실행 ');
         }
         
         /*콜백함수를 익명함수로 정의*/
         callTenTimes(function() {
-            alert('콜백함수를 익명함수로 정의');
+            //alert('콜백함수를 익명함수로 정의');
         })
         
         /*내장함수  alert() prompt() */
@@ -91,9 +91,9 @@
        var n5 = parseFloat(won); //string을 실수로 바꿈 
        var n6 = parseFloat(dollor);
        
-       alert(n1+':'+n2); //Nan : Nan
-       alert(n3+':'+n4); //1000: 1 
-       alert(n5+':'+n6); //1000: 1.5
+       //alert(n1+':'+n2); //Nan : Nan
+       //alert(n3+':'+n4); //1000: 1 
+       //alert(n5+':'+n6); //1000: 1.5
         
         
         
@@ -102,7 +102,7 @@
         newScript += 'var num7=10;'; 
         newScript += 'alert(num7)';
         
-        eval(newScript);
+        //eval(newScript);
         
     </script>
 </head>

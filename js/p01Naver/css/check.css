@@ -37,7 +37,7 @@
 }
 
 
-/* 체크사항 부분 일괄설정 */
+/* 체크사항 부분 기본 스타일 일괄설정 */
 #signupCheck tr:nth-child(4) a, 
 #signupCheck tr:nth-child(6) a,
 #signupCheck tr:nth-child(8) a, 
@@ -45,8 +45,11 @@
     line-height: 40px;
     color: #000000;
     font-weight: 700;
-    
 }
+
+/* 체크사항: 체크 되었을때 
+- i: 색상변경 
+- a tag: 점선 border*/
 #signupCheck tr:nth-child(4) i, 
 #signupCheck tr:nth-child(6) i,
 #signupCheck tr:nth-child(8) i, 
@@ -54,6 +57,17 @@
     line-height: 40px;
     padding: 0 10px 0 0;
     font-size: 20px;
+}
+
+#signupCheck input[type=checkbox] {
+    display: none;
+}
+#signupCheck label {
+    cursor: pointer;
+}
+#signupCheck input[type=checkbox]:checked 
++ #signupCheck tr:nth-child(4) i {
+    color: #08A600;
 }
 
 #signupCheck textarea {

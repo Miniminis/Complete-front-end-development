@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validation</title>
+
+</head>
+<body>
+   <form id="loginform" action="http://www.naver.com">
+       아이디 <input type="text" id="uId" required><br>
+       이메일 <input type="email" required><br>
+       비밀번호 <input type="password" id="uPw" required><br>
+       개인정보 활용 동의 <input type="checkbox" id="chk" required><br>
+       <input type="submit" value="로그인">
+   </form>
+   
+    <script>
+        window.onload = function() {
+            var loginform = document.getElementById('loginform');
+            loginform.onsubmit = function () {
+                
+                var uId = document.getElementById('uId');
+                var uPw = document.getElementById('uPw');
+                var chk = document.getElementById('chk');
+                
+                /*if(!chk.checked) {
+                    alert('이용약관에 동의해주세요. ');
+                    return false;
+                }*/
+                
+                /*가장 기본적인 유효성 검사: 공백확인*/
+                /*if(uId.value.length<1) {
+                    alert('아이디를 입력해주세요.')
+                    uId.focus();
+                    
+                    return false;
+                }*/
+                
+                /*if(uPw.value.length<1) {
+                    alert('비밀번호를 입력해주세요.');
+                    uPw.focus();
+                    return false;
+                }*/
+                return true;
+            }
+        }
+        
+    </script>
+</body>
+</html>
+
+
+<!--validation 
+1. html 5부터는 요소 하나씩 유효성 검사 제공 - 공백만 검사하면 됨 
+2.
+-->

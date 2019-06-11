@@ -1,0 +1,98 @@
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+hr {
+    text-decoration-color: red;
+    margin: 10px;
+
+}
+
+table {
+    margin: 20px 0;
+}
+
+a{
+    cursor: pointer;
+}
+
+.input {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+#mainWrapper {
+    width: 800px; 
+    margin: 100px auto;
+    padding: 20px;
+    background-color:bisque;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#header table td {
+    width: 170px;
+}
+
+#header table tr {
+    height: 30px;
+}
+
+input[type=submit], input[type=button] {
+    padding: 3px 40px;
+    margin: 10px;
+    background-color:darkorange;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}          
+#memberlist table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#memberlist>table>thead {
+    line-height: 30px;
+    background-color:darkorange;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+#memberlist tbody td {
+    padding: 5px;
+    border: 1px solid black;
+    background-color:blanchedalmond;
+}
+
+#editTable {
+    width: 300px;
+    padding: 15px 5px 0 0;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:cornsilk
+}
+
+/*수정 팝업창 설정*/
+#mainWrapper, #header {
+    z-index: 100;
+}
+#header {
+    position: relative;
+}
+#editTable {
+    z-index: 100000000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+

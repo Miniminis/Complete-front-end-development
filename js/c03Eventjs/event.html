@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+    <h1 id="title">자바 스크립트 이벤트 처리</h1>
+    <input type="text" id ="msg" placeholder="메시지를 입력해주세요." value="test">
+    <button id="btn">텍스트 변경하기</button>
+    
+    <h2 id="text">text</h2>
+    
+    <!--인라인방식 이벤트처리-->
+    <input type="button"  id="btn00" value="button-inline event"  ondblclick="f1()"> 
+    
+    <input type="button" id="delBtn" value="삭제하기" onclick="delMessage(1)">
+    <script>
+        
+        /*인라인방식 이벤트처리 */
+        function f1() {
+            var message ='안녕하세요';
+            alert(message);
+        }
+        
+        function delMessage(index) {
+            var result = confirm('정말 삭제하시겠습니까?');
+            if(result) {
+                alert(index+'번 내용이 삭제됩니다.')
+            }
+        }
+        
+        
+        /*이벤트 연결: window.onload = function() {}
+        - function(): 이벤트 리스너, 이벤트 핸들러 
+        방법1) window.onload = function(){}
+        방법2) 태크에서 onclick = "자바스크립트 함수"*/
+        
+        /*event test*/
+        /*onload: 시스템이 발생시키는 이벤트 */
+        window.onload = function(e) {
+            
+            var cnt = 0;
+            
+            var button = document.getElementById('btn'); //casting- 문서객체로 변환! 
+            
+            /*이벤트 적용: 버튼에 이벤트 속성에 함수로 등록
+            - 사용자가 버튼을 누름으로서 발생시키는 이벤트
+            - 이벤트 핸들러 */
+            button.onclick = function() {
+                
+                /*이벤트 속성 확인*/
+                var event = e || window.event;
+                var text = document.getElementById('text'); 
+                
+                for(var key in event) {
+                    text.innerHTML += key + ' : '+ event[key]+'<br>';
+                }
+                
+                /*this는 이벤트가 발생한 객체를 가르킨다. 
+                - 클릭 이후의 btn style 규정*/
+                this.style.color = 'red';
+                
+                alert('내용을 변경하시겠습니까?');
+                
+                var title = document.getElementById('title');
+                //alert(title.innerHTML);
+                title.innerHTML += '<br>' 
+                    +msgString 
+                    +'<input type="button" id="delBtn" value="삭제하기" onclick="delMessage('+ cnt++ +')">'; 
+                
+                /*input 안에 메시지가 남아있지 않도록 다른 이벤트 강제실행*/
+                inputMsg.focus(); 
+                                
+                /*이벤트의 제거*/
+                //button.onclick = null;
+                
+                var msgString = document.getElementById('msg').value; 
+                
+            }
+            
+            var inputMsg = document.getElementById('msg');
+            
+            inputMsg.onfocus = function () {
+                
+                this.value=''; //빈칸에 남아있던 test를 공백으로 변경해줌 
+                //var msgstr = this.value;
+                //alert('input focus evnt : this.value - ' + msgstr);
+                
+                //inputMsg.onfocus = null;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+<!--event 
+1. 사용자 발생 2. 어플리케이션 스스로 발생 
+- 마우스 이벤트: onclick (over, enter 등 )
+- 키보드 이벤트: 글자수 체크(자소서) key up, 
+- html frame event : 창 내부에 작은 윈도우창 삽입
+- html 입력양식 이벤트 : form, input, 데이터 변경시, 체크에 따라 입력폼이 변화  
+- 유저 인터페이스 이벤트, 구조 변화 이벤트, 터치 이벤트 
+-->
+
+

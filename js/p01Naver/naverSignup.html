@@ -10,7 +10,8 @@
     <link href="css/screen.css" rel="stylesheet" media="screen">
     
     <script src="https://kit.fontawesome.com/744ccfa256.js"></script>
-
+    <script src="js/default.js"></script>
+    
 </head>
 <body>
    <!--header-->
@@ -22,41 +23,41 @@
     <form id="content" method="get" action="">
         <table>
             <tr>
-                <td colspan="3"><label for="id">아이디</label></td>
+                <td colspan="3">아이디</td>
             </tr>
             <tr>
-                <td colspan="3"><input type="text" id="id" name="id" >@naver.com</td>
+                <td colspan="3"><input type="text" id="id" name="id" required>@naver.com</td>
             </tr>
             <tr>
-                <td colspan="3"><label for="pw">비밀번호</label></td>
+                <td colspan="3">비밀번호</td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="password" id="pw" name="pw">
+                    <input type="password" id="pw" name="pw" required>
                     <i class="fas fa-lock"></i>
                 </td>
             </tr>
             <tr>
-                <td colspan="3"><label for="pwchk">비밀번호 재확인</label></td>
+                <td colspan="3">비밀번호 재확인</td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="password" id="pwchk" name="pwCheck">
+                    <input type="password" id="pwchk" name="pwCheck" required>
                     <i class="fas fa-unlock"></i>
                 </td>
             </tr>
             <tr>
-                <td colspan="3"><label for="username">이름</label></td>
+                <td colspan="3">이름</td>
             </tr>
             <tr>
-                <td colspan="3"><input type="text" id="username" name="username"></td>
+                <td colspan="3"><input type="text" id="username" name="username" required></td>
             </tr>
             <tr>
-                <td colspan="3"><label for="bdate">생년월일</label></td>
+                <td colspan="3">생년월일</td>
             </tr>
             <tr>
-                <td><input type="text" id="bdate" name="byear" placeholder="년(4자)"></td>
-                <td><select id="bdate" name="bmonth">
+                <td><input type="text" id="bdate" name="byear" placeholder="년(4자)" required></td>
+                <td><select id="bdate" name="bmonth" required>
                         <option>월</option>
                         <option>1</option>
                         <option>2</option>
@@ -71,7 +72,7 @@
                         <option>11</option>
                         <option>12</option>
                 </select></td>
-                <td><input type="text" id="bdate" name="bday" placeholder="일"></td>
+                <td><input type="text" id="bdate" name="bday" placeholder="일" required></td>
                 <!--<td>
                     <input type="text" id="bdate" name="byear" placeholder="년(4자)">
                     <select id="bdate" name="bmonth">
@@ -93,10 +94,10 @@
                 </td>-->
             </tr>
             <tr>
-                <td colspan="3"><label for="gender">성별</label></td>
+                <td colspan="3">성별</td>
             </tr>
             <tr>
-                <td colspan="3"><select id="gender" name="gender">
+                <td colspan="3"><select id="gender" name="gender" required>
                     <option>성별</option>
                     <option>여자</option>
                     <option>남자</option>
@@ -104,16 +105,16 @@
                 </select></td>
             </tr>
             <tr>
-                <td colspan="3"><label for="email">본인 확인 이메일(선택)</label></td>
+                <td colspan="3">본인 확인 이메일(선택)</td>
             </tr>
             <tr>
-                <td colspan="3"><input type="email" id="email" name="email" placeholder="선택입력"></td>
+                <td colspan="3"><input type="email" id="email" name="email" placeholder="선택입력" required></td>
             </tr>
             <tr>
-                <td colspan="3"><label for="phnum">휴대전화</label></td>
+                <td colspan="3">휴대전화</td>
             </tr>
             <tr>
-                <td colspan="3"><select id="phnum" name="phCountryNum">
+                <td colspan="3"><select id="phnum" name="phCountryNum" required>
                     <option>대한민국 +82</option>
                     <option>가나 +233</option>
                     <option>가봉 +241</option>
@@ -122,7 +123,7 @@
             </tr>
             <tr><td></td></tr>
             <tr>
-                <td colspan="2"><input type="text" id="phnum" name="phnum" placeholder="전화번호 입력"></td>
+                <td colspan="2"><input type="text" id="phnum" name="phnum" placeholder="전화번호 입력" required></td>
                 <td><input type="button" value="인증번호 받기"></td>
             </tr>
              <tr><td></td></tr>
@@ -131,7 +132,7 @@
             </tr>
              <tr><td></td></tr>
             <tr>
-                <td colspan="3"><input type="submit" value="가입하기" ></td>
+                <td colspan="3"><input type="submit" value="가입하기"></td>
             </tr>
         </table>    
     </form>

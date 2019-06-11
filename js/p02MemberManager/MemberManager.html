@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Manager</title>
+    <link href="MemberManager.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="mainWrapper">
+   <div id="header">
+      <div id=editPopUp>
+          
+      </div>
+       <h1>Member Manager</h1>
+       <hr>
+       <h3>회원등록</h3>
+       <form id="regForm" type="post">
+           <table>
+               <tr>
+                   <td><label for="uId">아이디(이메일)</label></td>
+                   <td><label for="uPw">비밀번호</label></td>
+                   <td><label for="uName">이름</label></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td><input type="text" placeholder="아이디" id="uId" name="userid" class="input" required></td>
+                   <td><input type="password" placeholder="비밀번호" id="uPw" name="password" class="input" required></td>
+                   <td><input type="text" placeholder="이름" id="uName" name="username" class="input" required></td>
+                   <td><input type="submit" value="등록"></td>
+               </tr>
+           </table>
+       </form>
+   </div>
+   <hr>
+   <h3>회원리스트</h3>
+   <div id="memberlist" >
+      <table>
+         <thead>
+                <tr>
+                  <td>index</td>
+                  <td>아이디</td>
+                  <td>비밀번호</td>
+                  <td>이름</td>
+                  <td>관리</td>  
+                </tr>
+         </thead>
+         <tbody id="listRow">
+             
+         </tbody>
+      </table>   
+   </div>
+   
+  <!-- <div id="editTable">
+       <h3>회원정보수정</h3>
+       <a>닫기</a>
+       <hr>
+       <form>
+           <table>
+               <tr>
+                   <td>아이디(이메일)</td>
+                   <td><input type="text" class="input" value=''></td>
+               </tr>
+               <tr>
+                   <td>비밀번호</td>
+                   <td><input type="text" class="input"></td>
+               </tr>
+               <tr>
+                   <td>이름</td>
+                   <td><input type="text" class="input"></td>
+               </tr>
+               <tr>
+                   <td colspan="2"><input type="button" value="수정" id="edit"></td>
+               </tr>
+           </table>
+       </form>
+   </div>-->
+   </div>
+   
+<script src="MemberManager.js"></script>
+</body>
+</html>
+
+
+<!--개요
+1. 사용자 정보를 입력받기 위한 form 구성 - html 
+2. input의 value 값을 받기 
+- 캐스팅, value 속성 이용 
+3. 생성자 함수를 이용하여 객체 생성 
+4. 여러개의 객체를 저장하기 위한 객체 배열 생성 
+5. 
+-->
+
+
+<!--
+1. 메뉴 클릭 
+2. 수정 폼이 생성 또는 보여짐 - 수정 데이터 표시 
+3. 수정 완료: 배열 속 객체의 데이터 변경 
+4. settable -->
+
+
+<!--
+1. 삭제누르기: confirm mesage
+2. confirm: true - 배열에서 해당 index 의 요소를 삭제 
+- 특정 요소 삭제 후에 새로운 배열을 반환해주는 매서드 
+3. set table -->
+
+
+<!--데이터 저장 
+- local storage
+- 객체를 문자열로 변환 - stringify -->

@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>window object</title>
     <script>
+        
+        /*웹브라우저 객체모델: 
+        window, location, navigator, history, screen, document 객체 */
+        
         /* open() */
         //window.open('', 'child'); // 팝업 - 빈화면이 새탭으로 나타남
         var child = window.open('http://www.naver.com', 'child', 'width=200, height=200, location=yes, status=0, resizable=1');
         
         child.document.write('<h1 onclick="self.close()">from window object </h1>')
         
-        /*location() */
-        function moveUrl(1) {
+        /*location 객체 - href: 버튼 클릭 후 페이지 이동처리*/ 
+        /*location() - 주소창 */
+        function moveUrl() {
             alert(location.href);
             location.href ='http://www.naver.com';
         }
@@ -48,4 +53,3 @@
 -->
 
 
-<!--location 객체 - href: 버튼 클릭 후 페이지 이동처리 -->
