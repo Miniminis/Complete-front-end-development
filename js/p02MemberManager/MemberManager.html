@@ -6,15 +6,14 @@
     <link href="MemberManager.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+ <!--1. 회원정보 등록할 메인 페이지 마크업 -->
   <div id="mainWrapper">
    <div id="header">
-      <div id=editPopUp>
-          
-      </div>
+      <!--<div id=editPopUp></div>--> 
        <h1>Member Manager</h1>
        <hr>
        <h3>회원등록</h3>
-       <form id="regForm" type="post">
+       <form id="regForm" method="post">
            <table>
                <tr>
                    <td><label for="uId">아이디(이메일)</label></td>
@@ -32,6 +31,8 @@
        </form>
    </div>
    <hr>
+   
+   <!--회원 리스트-->
    <h3>회원리스트</h3>
    <div id="memberlist" >
       <table>
@@ -45,38 +46,48 @@
                 </tr>
          </thead>
          <tbody id="listRow">
-             
+             <!--자바스크립트로부터 삽입된 회원 리스트 테이블-->
          </tbody>
       </table>   
    </div>
    
-  <!-- <div id="editTable">
+   <!--회원정보 수정을 위한 새로운 팝업창 -->
+   <div id="editTable">
        <h3>회원정보수정</h3>
-       <a>닫기</a>
        <hr>
-       <form>
+       <form id="editform" method="post">
            <table>
                <tr>
                    <td>아이디(이메일)</td>
-                   <td><input type="text" class="input" value=''></td>
+                   <td><input type="text" class="input" id="newUId"></td>
                </tr>
                <tr>
                    <td>비밀번호</td>
-                   <td><input type="text" class="input"></td>
+                   <td><input type="text" class="input" id="newUPw"></td>
                </tr>
                <tr>
                    <td>이름</td>
-                   <td><input type="text" class="input"></td>
+                   <td>
+                      <input type="text" class="input" id="newUName">
+                   </td>
                </tr>
                <tr>
-                   <td colspan="2"><input type="button" value="수정" id="edit"></td>
+                   <td colspan="2"><input type="submit" value="수정"><input type="button" id="cancelBtn" value="취소"><input type="hidden" id="newIndex"></td>
                </tr>
            </table>
        </form>
-   </div>-->
    </div>
-   
-<script src="MemberManager.js"></script>
+   </div>
+
+<!--ver01: 최초 html 파일 구성 및 id를 통해 javascript 파일로 캐스팅-->
+<!--<script src="MemberManager01.js"></script>-->
+
+<!--기존의 등록 기능에 수정 및 삭제 기능을 더함 -->
+<!--<script src="MemberManager02.js"></script>-->
+
+<!--JSON을 통해 웹 브라우저에 데이터를 저장-->
+<script src="MemberManager03.js"></script>
+
 </body>
 </html>
 

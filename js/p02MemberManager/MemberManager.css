@@ -71,28 +71,27 @@ input[type=submit], input[type=button] {
     background-color:blanchedalmond;
 }
 
+/*수정 팝업창 설정*/
+#mainWrapper {
+    z-index: 100;
+    position: relative;
+}
+
 #editTable {
-    width: 300px;
-    padding: 15px 5px 0 0;
+    width: 400px;
+    padding: 30px 20px;
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
-    background-color:cornsilk
+    background-color:cornsilk;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -200px;
+    display: none;
 }
 
-/*수정 팝업창 설정*/
-#mainWrapper, #header {
-    z-index: 100;
-}
-#header {
-    position: relative;
-}
-#editTable {
-    z-index: 100000000;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+
 
 
 
