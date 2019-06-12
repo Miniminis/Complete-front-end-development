@@ -1,36 +1,7 @@
-/*checkbox 
-- 전체 선택시: 1-4번까지 일괄 체크됨 
-- 1-4번이 모두 선택되면 - 전체선택 버튼도 선택
-*/
-
-function allCheck(checked) {
-    chk1.checked = true;
-    chk2.checked = true;
-    chk3.checked = true;
-    chk4.checked = true;
-}
-
-function uncheck() {
-    if(chkAll.checked) {
-       chkAll.checked = false;
-    }
-}
-
- //전체동의
-/*if(chkAll.checked==true) {
-    // alert('전체체크 ');
-    chk1.checked = true;
-    chk2.checked = true;
-    chk3.checked = true;
-    chk4.checked = true;
-}*/
 window.onload = function () {
     var signupCheck = document.getElementById('signupCheck');
-    var chkAll = document.getElementById('chkAll');
     var chk1 = document.getElementById('chk1');
     var chk2 = document.getElementById('chk2');
-    var chk3 = document.getElementById('chk3');
-    var chk4 = document.getElementById('chk4');
     
     //동의 버튼을 눌렀을떄 - 필수 체크항목 2개 검사 
     signupCheck.onsubmit = function() {
@@ -42,14 +13,41 @@ window.onload = function () {
     };    
 };
 
+//전체 선택 --> 1-4번까지 일괄 체크됨 
+//1-4번이 모두 선택되면 - 전체선택 버튼도 선택
+function allcheck () {
+    var chkAll = document.getElementById('chkAll');
+    var chk1 = document.getElementById('chk1');
+    var chk2 = document.getElementById('chk2');
+    var chk3 = document.getElementById('chk3');
+    var chk4 = document.getElementById('chk4');
+    
+    //console.log('전체 체크'); //확인
+    
+    if(chkAll.checked==true) { //만약 전체 체크 버튼이 checked 이면
+        //alert('전체체크 '); //확인
+        chk1.checked = true;
+        chk2.checked = true;
+        chk3.checked = true;
+        chk4.checked = true;
+    } else { //전체 선택버튼이 checked 가 아니면
+        chk1.checked = false;
+        chk2.checked = false;
+        chk3.checked = false;
+        chk4.checked = false;
+    }
+};
+
+//1-4번중에 하나라도 체크되지 않으면 --> 전체선택버튼 체크 취소 
+function uncheck() { //버튼이 checked 되어있지 않으면 
+    var chkAll = document.getElementById('chkAll');   
+    
+    if(chkAll.checked==true) {
+        chkAll.checked = false;
+    }
+}
 
 
 
-/*동의/비동의: 
-- 1번과 2번의 체크박스가 선택되면 --> 페이지 이동 
-- else: 에러 메시지 
- 
-- 비동의: naver 메인 페이지로 연결 
-*/
 
 
