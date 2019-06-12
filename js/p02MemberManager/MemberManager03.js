@@ -44,23 +44,22 @@ Member.prototype.makeHtml = function (index) {
 // - 페이지가 완전히 로드된 상태에서 실행되므로 오류의 가능성을 줄여준다.
 window.onload = function() {
     
-    if(localStorage.getItem('members') == null) {
-        //최초 실행
-        members=[];
+    //json 이용하여 웹 브라우저에 데이터 객체 저장해주기
+    if(localStorage.getItem('members') == null) { //ver members 변수에 담긴 데이터가 없다면 --> 프로그램을 최초 실행한다면 
 
-        //localStorage 에 배열을 저장 
-        localStorage.setItem('members', JSON.stringify(members));
-    } else {
-        members = JSON.parse(localStorage.getItem('members'));
-        setList();
-    }   
+        members=[]; //최초 실행 - 1. members 배열을 생성해주고 
+        localStorage.setItem('members', JSON.stringify(members)); //2. 그 객체 배열에 json stirng 형식으로 데이터를 넣어준다. 
+        } else { //members 배열에  이미 담긴 데이터가 있다면 
+            members = JSON.parse(localStorage.getItem('members')); //members 배열에 json type 으로 저장된 데이터를 객체 타입으로 변환한 후, 
+            setList();  //list 를 로드하여 화면에 띄워준다. 
+        }   
     
+    /*4. 데이터 저장: 입력폼 각각에 정의된 id를 통해서 데이터를 js 내부로 캐스팅 하여 객체에 저장해준다. */
     /*등록 폼을 캐스팅 */
     //form에 정의된 id 값을 통해서 가져옴 
     var regForm = document.getElementById('regForm');
     
     //등록 버튼 클릭 --> 초기입력폼 정보 저장 
-    
     regForm.onsubmit = function() {
         var uId = document.getElementById('uId');
         var uPw = document.getElementById('uPw');
@@ -82,14 +81,15 @@ window.onload = function() {
             return false;
         }
         
-        /* 새로운 데이터로 객체 생성 */
+        /* 4. 입력받은 데이터로 객체 생성 */
         var newMember = new Member(uId.value, uPw.value, uName.value);
         
         //newMember.showData(); //확인용
         
-        /*member 배열에 저장 */
+        /*4. 새롭게 생성된 데이터를 members 배열에 저장 */
         members.push(newMember); //배열의 요소 추가--> 변경
         
+        //json 으로 브라우저에 저장 
         localStorage.setItem('members', JSON.stringify(members));
         
         alert('정상적으로 입력되었습니다.');
@@ -176,13 +176,13 @@ function setList () {
         newHtml += '<td>'+members[i].userpw   +'</td>\n';
         newHtml += '<td>'+members[i].username  +'</td>\n';
         newHtml += '<td><a onclick="editMember('+i+')"> 수정 |</a><a onclick="deleteMember('+i+')"> 삭제 </a></td>\n';
-        
+        //수정과 삭제 - onclick을 통해서 각각의 함수로 이동: editMember(), deleteMember() 
         
     }
     document.getElementById('listRow').innerHTML = newHtml;
 }
 
-//members 배열의 요소를 수정하는 기능
+//5. 데이터 수정: members 배열의 요소를 수정하는 기능
 function editMember(index) {
     
     /*var editTable = document.getElementById('editTable');
@@ -193,7 +193,7 @@ function editMember(index) {
     
     //alert('정보를 수정합니다.'); 
     
-    //수정, 폼의 아이디, 비밀번호, 이름 input을 캐스팅 
+    //수정, 폼의 아이디, 비밀번호, 이름, hidden index의 input을 캐스팅 
     var newUId = document.getElementById('newUId');
     var newUPw = document.getElementById('newUPw');
     var newUName = document.getElementById('newUName');
@@ -214,6 +214,7 @@ function editMember(index) {
 function deleteMember(index) {
     var result = confirm('정말 삭제하시겠습니까?');
     if(result) {
+        
         /*splice(삭제위치, 해당 위치부터의 삭제 개수, 삭제된 자리를 대체할 요소) 매서드를 이용*/
         members.splice(index, 1);
        
