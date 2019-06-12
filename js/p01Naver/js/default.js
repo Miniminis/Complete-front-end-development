@@ -1,15 +1,55 @@
-/*window.onload = function() {
-    var uId = document.getElementById('id');
+/*checkbox 
+- 전체 선택시: 1-4번까지 일괄 체크됨 
+- 1-4번이 모두 선택되면 - 전체선택 버튼도 선택
+*/
 
-    if(uId.value.length<1) {
-        alert('아이디를 입력해주세요');
-        return false;
-    }
-}*/
-
-window.onload = function () {
-    var loginsubmit = document.getElementById('content');
-    
+function allCheck(checked) {
+    chk1.checked = true;
+    chk2.checked = true;
+    chk3.checked = true;
+    chk4.checked = true;
 }
+
+function uncheck() {
+    if(chkAll.checked) {
+       chkAll.checked = false;
+    }
+}
+
+ //전체동의
+/*if(chkAll.checked==true) {
+    // alert('전체체크 ');
+    chk1.checked = true;
+    chk2.checked = true;
+    chk3.checked = true;
+    chk4.checked = true;
+}*/
+window.onload = function () {
+    var signupCheck = document.getElementById('signupCheck');
+    var chkAll = document.getElementById('chkAll');
+    var chk1 = document.getElementById('chk1');
+    var chk2 = document.getElementById('chk2');
+    var chk3 = document.getElementById('chk3');
+    var chk4 = document.getElementById('chk4');
+    
+    //동의 버튼을 눌렀을떄 - 필수 체크항목 2개 검사 
+    signupCheck.onsubmit = function() {
+        if(!chk1.checked || !chk2.checked) {
+            alert('네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.');
+            return false;
+        }
+        return true;
+    };    
+};
+
+
+
+
+/*동의/비동의: 
+- 1번과 2번의 체크박스가 선택되면 --> 페이지 이동 
+- else: 에러 메시지 
+ 
+- 비동의: naver 메인 페이지로 연결 
+*/
 
 

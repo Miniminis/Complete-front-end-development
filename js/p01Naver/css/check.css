@@ -1,3 +1,9 @@
+/*전체설정*/
+input[type=checkbox] {
+    display: none;
+}
+
+
 #header {
     position: relative;
     overflow: hidden;
@@ -32,6 +38,7 @@
 #signupCheck tr:nth-child(2) p{
     padding: 0 25px;
     text-decoration: underline;
+    font-weight: bold;
     color: #000000;
     overflow: hidden;
 }
@@ -48,8 +55,7 @@
 }
 
 /* 체크사항: 체크 되었을때 
-- i: 색상변경 
-- a tag: 점선 border*/
+- i: 색상변경 - 클릭: 배경색은 초록, 내부글씨는 흰색으로*/
 #signupCheck tr:nth-child(4) i, 
 #signupCheck tr:nth-child(6) i,
 #signupCheck tr:nth-child(8) i, 
@@ -59,15 +65,8 @@
     font-size: 20px;
 }
 
-#signupCheck input[type=checkbox] {
-    display: none;
-}
 #signupCheck label {
     cursor: pointer;
-}
-#signupCheck input[type=checkbox]:checked 
-+ #signupCheck tr:nth-child(4) i {
-    color: #08A600;
 }
 
 #signupCheck textarea {
@@ -95,6 +94,19 @@
 #signupCheck input[type=submit] {
     background-color: #08A600;
 }
+
+/*checkbox 가 checked 상태이면 --> input[type=checkbox]밑에 있는 항목들이 영향을 받음 */
+#signupCheck input[type=checkbox]:checked+ i {
+    color: #08A600;
+}
+
+
+
+/*footer*/
 #signupCheck tr .footer a {
     text-decoration: underline;
+    font-weight: bold;
+}
+#signupCheck tr .footer a:hover {
+    color: #8E8E8E;
 }

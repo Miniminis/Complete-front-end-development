@@ -170,6 +170,10 @@ i {
 .footer a{
     color: #7E7E7E;
 }
+.footer a:hover {
+    color: #08A600;
+    text-decoration: underline;
+}
 
 .footer a:nth-child(2) {
     font-weight: bold;
