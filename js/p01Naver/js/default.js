@@ -1,8 +1,11 @@
 $(document).ready(function(){
     /*1. 전체선택 --> 1-4번선택 */
-    
+    if($('#chkAll').prop('checked')) {
+        $('input:checkbox').prop('checked', true);
+    }
     
     /*1-1. 1-4번 중 하나라도 체크 안되어 있으면 --> 전체선택 취소*/
+    
     /*2. 1-4번선택 --> 전체선택*/
     /*3. 1번과 2번 필수선택항목 --> 체크 안하면 경고메시지*/
     

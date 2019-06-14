@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery event range</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            //trigger() - 이벤트 강제발생 
+            //- click() 과 같은 형태로 이벤트 강제발생도 가능! 
+
+
+            //이벤트 연결범위의 한정 
+            $('h1').on('click', function(){
+
+                var length = $('h1').length;
+                var targethtml = $(this).html();
+
+                $('#wrap').append('<h1>'+length+' - '+targethtml+'</h1>');
+            });
+            
+            
+            //마우스 이벤트 
+            
+            
+            //키보드 이벤트: keydown - keypress - keyup
+            //- keyup() : textarea - 글자수 체크 
+           /* $('textarea').keyup(function(){
+                //alert(확인);
+                var inputval = $(this).val();
+                var inputlength = inputval.length; //textarea box 내에 적인 문자열의 길이
+                var remain = 150 - inputlength;  //현재 사용할 수 있는 문자열의 개수 
+                
+                if(remain<1) {
+                    $('<h4></h4>').html('지정된 글자수를 초과하셨습니다.').appendTo('#keyboard');
+                    
+                    var in = inputval.substr(0, 150);
+                    $(this).val(in);
+                    $('h2').html('0');
+                    return;
+                }
+                
+                $('h2').html(remain);
+                
+                
+            });*/
+            
+            
+            
+            
+            //입력양식 이벤트 
+            //1. change(): checked 상태에 따라서 화면 레이아웃 변경시켜줄때 
+            //2. focus - blur 
+            
+            //return false; - 유효성검사 
+            
+            
+            $('#form').submit(function(event){
+                var userID = $('#userid').val();
+                var userPW = $('#userpw').val();
+                
+                if(userID.length<1) {
+                    alert('아이디를 입력해주세요.');
+                    $('#userid').focus();
+                    return false;
+                }
+                
+                if(userPW.length<1) {
+                    alert('비밀번호를 입력해주세요.');
+                    $('#userpw').focus();
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            
+            //change() 
+            $('#chkAll').change(function(){
+                
+                var chk = $(this).prop('checked');
+                            //== this.checked
+                if(chk) {
+                    $('#item').children().prop('checked', true);
+                } else {
+                    $('#item').children().prop('checked', false);
+                }
+            });
+            
+            //select 에서 관련 사이트로 이동하는 처리 
+            $('#byear').change(function(){
+                
+                var byear1 = $('#byear>option:selected').val();
+                //alert(byear1);
+                
+                location.href = byear1;
+            });
+            
+        });
+         
+                
+                
+    </script>
+</head>
+<body>
+  
+      <form id="form">
+         <h1>입력양식이벤트</h1>
+          id<input type="text" id="userid" name="userid"><br>
+          password<input type="password" id="userpw" name="userpw"><br>
+          
+         <textarea style="width: 500px; height: 200px;" name="memo"></textarea>
+         <h2>150</h2>
+         
+         <h2>checkbox</h2>
+         모두선택 <input type="checkbox" id="chkAll"><br>
+         <div id="item">
+             <input type="checkbox">1
+             <input type="checkbox">2
+             <input type="checkbox">3
+             <input type="checkbox">4
+         </div>
+         
+         <select id="byear">
+             <option value="http://www.naver.com">naver</option>
+             <option value="http://www.daum.net">daum</option>
+             <option value="http://www.google.com">google</option>
+         </select><br>
+         
+         
+         
+         <input type="submit" value="등록하기">
+      </form>    
+     
+    <div id="wrap">
+        <h1>이벤트 연결 범위 한정</h1>
+    </div>
+     
+     
+     
+      
+</body>
+</html>

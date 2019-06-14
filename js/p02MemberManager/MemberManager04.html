@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Member Manager</title>
     <link href="MemberManager.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    
 </head>
 <body>
  <!--1. 회원정보 등록할 메인 페이지 마크업 -->
@@ -13,7 +15,7 @@
        <h1>Member Manager</h1>
        <hr>
        <h3>회원등록</h3>
-       <form id="regForm" method="post">
+       <form id="regForm" method="get">
            <table>
                <tr>
                    <td><label for="uId">아이디(이메일)</label></td>
@@ -22,11 +24,12 @@
                    <td></td>
                </tr>
                <tr>
-                   <td><input type="text" placeholder="아이디" id="uId" name="userid" class="input" required></td>
-                   <td><input type="password" placeholder="비밀번호" id="uPw" name="password" class="input" required></td>
-                   <td><input type="text" placeholder="이름" id="uName" name="username" class="input" required></td>
+                   <td><input type="text" placeholder="아이디" id="uId" name="userid" class="input"></td>
+                   <td><input type="password" placeholder="비밀번호" id="uPw" name="password" class="input"></td>
+                   <td><input type="text" placeholder="이름" id="uName" name="username" class="input"></td>
                    <td><input type="submit" value="등록"></td>
                </tr>
+               <tr id="validation"></tr>
            </table>
        </form>
    </div>

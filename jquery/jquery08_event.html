@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+        <title>jquery event</title>
+        <style>
+            h1{
+                border: 1px solid black;
+            }
+            .center {
+                background-color: antiquewhite;
+                text-align: center;
+            }
+            
+            div {
+                border: 1px solid pink;
+                border-radius: 5px;
+                
+                /*width: 200px;*/
+                padding: 10px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script>
+            //ready() 
+            //window.onload와 비슷
+            //- event 매서드 - 반드시 callback 함수를 갖는다. 
+            $(document).ready(function(){
+                
+                //this - event가 발생한 객체
+               /* $('h1').on('click', function(){
+                    
+                    $(this).html(function(index, html){
+                        return html + '+';
+                    });    
+                });*/
+                
+                $('h1').click(function(){
+                    $(this).html(function(index, html){
+                       return html+ '+'; 
+                        
+                    }); 
+                });
+                
+                
+                
+                //이벤트 연결 - addClass () + removeClass() 
+                //hover() 와 비교
+                /*$('h1').on({
+                    mouseenter: function(){
+                        $(this).addClass('center');
+                    }, 
+                    mouseleave: function(){
+                        $(this).removeClass('center');
+                    }, 
+                });*/
+                
+                //hover() - 위와 비교하여 알아두기
+                $('h1').hover(function(){
+                    $(this).addClass('center');
+                }, function(){
+                    $(this).removeClass('center');
+                });
+                
+                //event 연결해제 
+                $('h1').off();
+                
+                //매개변수 context
+                //this(현재 이벤트가 발생한 객체) 내부로 h1 선택의 범위를 한정시킨다 
+                $('div').click(function(){
+                    var name = $('h1', this).text();
+                    var pnum = $('p', this).text();
+                    
+                    alert(name + ' : '+ pnum);
+                    
+                });
+                
+                
+                //FormEvents
+                
+                //keyup()
+                
+                //function(event) - event 를 매개변수로 전달받아야만 사용 가능!!!!!! 
+                //1. event.isDefaultPrevented()
+                //2. event.isPropagationStopped()
+                
+                //3. event.preventDefault() 
+                //- $('a').click() --> 클릭 이벤트 발생 전에 페이지가 이동되는 문제점 
+                $('a').click(function(event){
+                    
+                    alert('클릭 이벤트 이후  페이지를 이동하지 않습니다. ');
+                    //event.preventDefault();
+                    //event.stopPropagation();
+                });
+                
+                
+                //4. event.stopPropagation(event)
+                //- 이벤트가 부모에게까지 영향을 미치는 것을 막아줌 
+                // == 이벤트 버블링을 막아줌
+                $('#box1').click(function(event){
+                    alert('click box1');
+                    event.stopPropagation();
+                });
+                $('#box2').click(function(event){
+                    alert('click box2');
+                    event.stopPropagation();
+                });
+                $('#box3').click(function(event){
+                    alert('click box3')
+                    //event.stopPropagation();
+                    return false;
+                });
+            
+                
+            });
+        </script>
+    </head>
+    <body>
+    
+      <!--event 객체: event.preventDefault()-->
+      <a href="http://www.naver.com">event.preventDefault()</a>
+      
+      
+      <!--event.stopPropagation()-->
+      <div id="box1" style="background-color: aqua; padding: 50px;">
+          <h3 id="box2" style="background-color: blue; padding: 30px;">
+              <p id="box3" style="background-color: bisque; padding: 10px;"><a href="http://www.naver.com">event.stopPropagation()</a></p>
+          </h3>
+      </div>
+      
+      
+       <div>
+           <h1>플래시</h1>
+           <p>010-9999-9999</p>
+       </div>
+       <div>
+           <h1>주디</h1>
+           <p>010-0000-9999</p>
+       </div>
+       <div>
+           <h1>슈퍼마리오</h1>
+           <p>010-0000-9999</p>
+       </div>
+       
+       
+        <h1>event 00</h1>
+        <h1>event 01</h1>
+        <h1>event 02</h1>
+    </body>
+</html>

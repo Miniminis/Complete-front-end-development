@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>동적 문서객체 생성</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    
+    <script>
+        //콜백함수: ready 되었을때, 호출되는 함수 
+        
+        $(document).ready(function() {
+            
+            //동적 문서객체를 생성
+            //h1 태그의 문서객체를 생성함 - html()
+            $('<h1></h1>').html('<i>동적 문서객체 생성하기 - html() 이용</i>').appendTo('h3');
+            
+            //h1 태그의 문서객체를 생성함 - text()
+            $('<h1></h1>').text('<i>동적 문서객체 생성하기 - text() 이용</i>').appendTo('h3');
+            
+            $('<h1><i>동적 문서객체 생성하기 - html() 추가로 사용하지 않고 문서객체 생성시에 정의해주기 </i></h1>').appendTo('h3');
+            
+            //이미지 태그 생성 - 속성으로 추가됨
+            /*$('<img>').attr(
+                {src: "../css/zootopia_1.jpg"},
+                {width: 600}
+            ).appendTo('body');
+            
+            //이미지 태그 생성 - style 추가됨
+            $('<img>', {
+                'src' : "../css/zootopia_2.jpg", 
+                width: 400, 
+                height: 400
+            }).appendTo('body');*/
+            
+            
+            //append(문서객체, 문서객체, ...): 여러개의 문서객체를 한꺼번에 입력할 수 있음!
+            var h1 = '<h1>append()의 사용 00</h1>';
+            var h2 = '<h1>append()의 사용 01</h1>';
+            
+            $('body').append(h1, h2, h1, h2);
+            
+            
+            //append(function(index){}) 
+            //배열 --> 요청, ajax 비동기통신 --> 서버 
+            //서버 --> 응답 --> JSON 객체 변환
+            var arr = [];
+            
+            arr.push({name: 'NAVER', url: 'http://www.naver.com'});
+            arr.push({name: 'DAUM', url: 'http://www.daum.net'});
+            arr.push({name: 'GOOGLE', url: 'http://www.google.com'});
+            
+            //function(){} 의 return 결과값은 반드시 문서객체의 형태!
+            /*$('div').append(function(index) {
+                
+                var output='';
+                output += '<a href = "'+ arr[index].url +'">'+arr[index].name+'</a>';
+                
+                return output;
+            });*/
+            
+            
+            //appendTo()를 이용한 배너 만들기 
+            //- 이미지의 지속적인 순서변경 
+            
+            setInterval(function(){
+                $('img').first().appendTo('div');
+                
+            }, 2000);
+            
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>1. 동적문서객체 생성하기</h1>
+    <h3>이 h3태그 뒤에 자바스크립트에서 생성된 동적 문서객체가 추가됩니다.</h3>
+    
+    <!--<div></div>
+    <div></div>
+    <div></div>-->
+    
+    <div style="width: 400px; height: 400px; border: 3px solid gray; overflow: hidden;">
+        <img src="../css/images/jyp01.jpg" width="400px">
+        <img src="../css/images/jyp02.jpg" width="400px">
+        <img src="../css/images/jyp03.gif" width="400px">
+        <img src="../css/images/jyp05.jpg" width="400px">
+    </div>
+    
+            
+</body>
+</html>
+
+<!--문서객체의 생성 
+1. appendTo : 
+- 페이지 갱신되지 않고 스크롤 동작에 따라 게시물이 계속 나타나도록 해주는 형태로 사용 가능 - 페이스북 피드 -->
