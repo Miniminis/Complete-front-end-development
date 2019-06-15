@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Member Info</title>
+    <!--jquery cdn -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            /*6-2. 수정 버튼 클릭 --> 수정 폼 submit 재정의*/
+            //form에 정의된 id 값을 통해서 가져옴 
+        /*    $('#editform').submit(function(){
+
+                var nid = $('#newUId');
+                var npw = $('#newUPw');
+                var nname = $('#newUName');
+                var nindex = $('#newIndex').val();
+                
+                //수정된 데이터 유효성검사
+                if(nid.val().length<1) {
+                    alert('아이디를 입력해주세요!');
+                    nid.focus();
+                    return false;
+                }
+                if(npw.val().length<1) {
+                    alert('비밀번호를 입력해주세요!');
+                    npw.focus();
+                    return false;
+                }
+                if(nname.val().length<1) {
+                    alert('이름을 입력해주세요!');
+                    nname.focus();
+                    return false;
+                }
+
+                //alert(nid.val());
+                //alert(npw.val());
+                //alert(nname.val());
+                //alert(nindex);
+
+                //검사 끝난 데이터들은 원래의 배열 속 객체에 삽입
+                members[nindex] = new Member(nid.val(), npw.val(), nname.val());
+
+                alert('정보가 성공적으로 수정되었습니다.');
+
+                //수정된 정보를 저장함 
+                localStorage.setItem('members', JSON.stringify(members));
+
+                setList(); //객체정보 재로딩
+                //$('#editTable').hide(); //수정창 숨기기
+                $(this).reset(); //수정창 리셋
+
+                return false;
+            });*/
+            
+            $('#passid').click(function(){
+                opener.$('#parent').val($('#newUId').val());
+                window.close();
+            });
+            
+            
+        
+            
+        });
+    </script>
+</head>
+<body>
+    <!--회원정보 수정을 위한 새로운 팝업창
+   - jquery 로 새로운 팝업창으로 생성 가능
+   -->
+   <div id="editTable">
+       <h3>회원정보수정</h3>
+       <hr>
+       <form id="editform">
+           <table>
+               <tr>
+                   <td>아이디(이메일)</td>
+                   <td><input type="text" class="input" id="newUId" value="newid 가라"></td>
+                   <td><input  type="button" id="passid" value="아이디등록"></td>
+               </tr>
+               <tr>
+                   <td>비밀번호</td>
+                   <td><input type="text" class="input" id="newUPw"></td>
+               </tr>
+               <tr>
+                   <td>이름</td>
+                   <td>
+                      <input type="text" class="input" id="newUName">
+                   </td>
+               </tr>
+               <tr>
+                   <td colspan="2"><input type="submit" value="수정"><input type="button" id="cancelBtn" value="취소"><input type="hidden" id="newIndex"></td>
+               </tr>
+           </table>
+       </form>
+   </div>
+</body>
+</html>

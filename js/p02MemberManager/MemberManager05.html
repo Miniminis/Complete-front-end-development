@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Manager</title>
+    <link href="MemberManager.css" rel="stylesheet" type="text/css">
+    <!--jquery cdn -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!--body 내부에 외부 js file 연결-->
+</head>
+<body>
+
+<input type="text" id="parent" placeholder="수정등록해주세요" value="value에요 제발가라"> 
+<input type="button" id="btn" value="수정하기">
+
+ <!--1. 회원정보 등록할 메인 페이지 마크업 -->
+  <div id="mainWrapper">
+   <div id="header">
+       <h1>Member Manager</h1>
+       <hr>
+       <h3>회원등록</h3>
+       <form id="regForm"> <!--method="post"-->
+           <table class="validation">
+               <tr>
+                   <td><label for="uId">아이디(이메일)</label></td>
+                   <td><label for="uPw">비밀번호</label></td>
+                   <td><label for="uName">이름</label></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td><input type="text" placeholder="아이디" id="uId" name="userid" class="input"></td>
+                   <td><input type="password" placeholder="비밀번호" id="uPw" name="password" class="input"></td>
+                   <td><input type="text" placeholder="이름" id="uName" name="username" class="input"></td>
+                   <td><input type="submit" value="등록"></td>
+               </tr>
+           </table>
+       </form>
+   </div>
+   <hr>
+   
+   <!--회원 리스트-->
+   <h3>회원리스트</h3>
+   <div id="memberlist" >
+      <table>
+         <thead>
+                <tr>
+                  <td>index</td>
+                  <td>아이디</td>
+                  <td>비밀번호</td>
+                  <td>이름</td>
+                  <td>관리</td>  
+                </tr>
+         </thead>
+         <tbody id="listRow">
+             <!--자바스크립트로부터 삽입된 회원 리스트 테이블-->
+         </tbody>
+      </table>   
+   </div>
+   </div>
+
+<!--ver01: 최초 html 파일 구성 및 id를 통해 javascript 파일로 캐스팅-->
+<!--<script src="MemberManager01.js"></script>-->
+
+<!--ver02: 기존의 등록 기능에 수정 및 삭제 기능을 더함 -->
+<!--<script src="MemberManager02.js"></script>-->
+
+<!--ver03: JSON을 통해 웹 브라우저에 데이터를 저장-->
+<!--<script src="MemberManager03.js"></script>-->
+
+<!--ver04: jquery 이용하여 유효성검사-->
+<script src="MemberManager04.js"></script>
+
+<!--ver05: 수정창 따로 띄우기 -->
+<script src="MemberManager05.js"></script>
+
+</body>
+</html>
+
+
+<!--개요
+1. 사용자 정보를 입력받기 위한 form 구성 - html 
+2. input의 value 값을 받기 
+- 캐스팅, value 속성 이용 
+3. 생성자 함수를 이용하여 객체 생성 
+4. 여러개의 객체를 저장하기 위한 객체 배열 생성 
+5. 등록 폼 - 유효성검사 
+6. 수정, 삭제 기능 추가 
+7. 수정폼 - 유효성 검사 
+8. 데이터 웹 브라우저에 저장하기 - json 이용 
+-->
+
+<!--
+1. 메뉴 클릭 
+2. 수정 폼이 생성 또는 보여짐 - 수정 데이터 표시 
+3. 수정 완료: 배열 속 객체의 데이터 변경 
+4. settable -->
+
+<!--
+1. 삭제누르기: confirm mesage
+2. confirm: true - 배열에서 해당 index 의 요소를 삭제 
+- 특정 요소 삭제 후에 새로운 배열을 반환해주는 매서드 
+3. set table -->
+
+
+<!--데이터 저장 
+- local storage
+- 객체를 문자열로 변환 - stringify -->
