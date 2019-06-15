@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <title>Member Manager</title>
     <link href="MemberManager.css" rel="stylesheet" type="text/css">
+    <!--jquery cdn -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    
+    <!--body 내부에 외부 js file 연결-->
 </head>
 <body>
  <!--1. 회원정보 등록할 메인 페이지 마크업 -->
   <div id="mainWrapper">
    <div id="header">
-      <!--<div id=editPopUp></div>--> 
        <h1>Member Manager</h1>
        <hr>
        <h3>회원등록</h3>
-       <form id="regForm" method="get">
-           <table>
+       <form id="regForm"> <!--method="post"-->
+           <table class="validation">
                <tr>
                    <td><label for="uId">아이디(이메일)</label></td>
                    <td><label for="uPw">비밀번호</label></td>
@@ -29,7 +29,6 @@
                    <td><input type="text" placeholder="이름" id="uName" name="username" class="input"></td>
                    <td><input type="submit" value="등록"></td>
                </tr>
-               <tr id="validation"></tr>
            </table>
        </form>
    </div>
@@ -60,7 +59,7 @@
    <div id="editTable">
        <h3>회원정보수정</h3>
        <hr>
-       <form id="editform" method="post">
+       <form id="editform">
            <table>
                <tr>
                    <td>아이디(이메일)</td>
@@ -106,16 +105,17 @@
 - 캐스팅, value 속성 이용 
 3. 생성자 함수를 이용하여 객체 생성 
 4. 여러개의 객체를 저장하기 위한 객체 배열 생성 
-5. 
+5. 등록 폼 - 유효성검사 
+6. 수정, 삭제 기능 추가 
+7. 수정폼 - 유효성 검사 
+8. 데이터 웹 브라우저에 저장하기 - json 이용 
 -->
-
 
 <!--
 1. 메뉴 클릭 
 2. 수정 폼이 생성 또는 보여짐 - 수정 데이터 표시 
 3. 수정 완료: 배열 속 객체의 데이터 변경 
 4. settable -->
-
 
 <!--
 1. 삭제누르기: confirm mesage

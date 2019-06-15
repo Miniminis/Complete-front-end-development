@@ -175,7 +175,7 @@ function setList () {
         newHtml += '<td>'+members[i].userid  +'</td>\n';
         newHtml += '<td>'+members[i].userpw   +'</td>\n';
         newHtml += '<td>'+members[i].username  +'</td>\n';
-        newHtml += '<td><a onclick="editMember('+i+')"> 수정 |</a><a onclick="deleteMember('+i+')"> 삭제 </a></td>\n';
+        newHtml += '<td><a onclick="editMember('+i+')"> 수정 |</a><a onclick="deleteMember('+i+')"> 삭제 </a></td></tr>\n';
         //수정과 삭제 - onclick을 통해서 각각의 함수로 이동: editMember(), deleteMember() 
         
     }
