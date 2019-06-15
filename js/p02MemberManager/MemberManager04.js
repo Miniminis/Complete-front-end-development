@@ -136,7 +136,7 @@ $(document).ready(function(){
  
     
     //6-3. 수정폼에서 취소 버튼 --> 수정창 숨기기 
-    $("cancelBtn").click(function(){
+    $("#cancelBtn").click(function(){
         $('#editTable').hide();
     });
 });
