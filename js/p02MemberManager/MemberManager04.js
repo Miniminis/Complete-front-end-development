@@ -52,22 +52,45 @@ $(document).ready(function(){
         var uPw = $('#uPw');
         var uName = $('#uName');        
         
-        //유효성검사
+        //유효성검사 - 아이디 길이
         if(uId.val().length<1) {
             alert('아이디를 입력해주세요!');
             uId.focus(); //아이디 input 칸에 focus 로 표시
             return false; //조건 충족하지 않은 항목 진행 막기
         }
+        
+        //유효성검사 - 중복 아이디
+        for(var i=0; i<members.length; i++) {
+            if(uId.val()== members[i].userid) {
+                alert('이미 존재하는 아이디입니다.');
+                uId.val(''); //아이디 입력란 비우기
+                uId.focus();
+                return false;
+            }
+        }
+        
+        //유효성검사 - 비밀번호 입력
         if(uPw.val().length<1) {
             alert('비밀번호를 입력해주세요!');
             uPw.focus();
             return false;
         }
+        
+        //유효성검사 - 비밀번호 길이
+        if(uPw.val().length>16) {
+            alert('비밀번호는 16자 이내만 가능합니다.');
+            uPw.val(''); //비밀번호 입력란 비우기
+            uPw.focus();
+            return false;
+        }
+        
+        //유효성검사 - 이름입력
         if(uName.val().length<1) {
             alert('이름을 입력해주세요!');
             uName.focus();
             return false;
         }
+
 
         //등록폼으로 입력받은 정보로 새로운 멤버객체 생성
         var newMember = new Member(uId.val(), uPw.val(), uName.val());
