@@ -21,9 +21,6 @@ input[type=checkbox] {
     margin: 0 auto;
 }
 
-#signCheck td {
-    color: #2DB400;
-}
 
 /*간격조정*/
 #signupCheck tr:nth-child(1), 
@@ -45,10 +42,10 @@ input[type=checkbox] {
 
 
 /* 체크사항 부분 기본 스타일 일괄설정 */
-#signupCheck tr:nth-child(4) a, 
-#signupCheck tr:nth-child(6) a,
-#signupCheck tr:nth-child(8) a, 
-#signupCheck tr:nth-child(10) a {
+#signupCheck tbody tr:nth-child(1) td, 
+#signupCheck tbody tr:nth-child(3) td,
+#signupCheck tbody tr:nth-child(5) td,
+#signupCheck tbody tr:nth-child(7) td {
     line-height: 40px;
     color: #000000;
     font-weight: 700;
@@ -56,10 +53,10 @@ input[type=checkbox] {
 
 /* 체크사항: 체크 되었을때 
 - i: 색상변경 - 클릭: 배경색은 초록, 내부글씨는 흰색으로*/
-#signupCheck tr:nth-child(4) i, 
-#signupCheck tr:nth-child(6) i,
-#signupCheck tr:nth-child(8) i, 
-#signupCheck tr:nth-child(10) i {
+#signupCheck tbody tr:nth-child(1) i, 
+#signupCheck tbody tr:nth-child(3) i,
+#signupCheck tbody tr:nth-child(5) i, 
+#signupCheck tbody tr:nth-child(7) i {
     line-height: 40px;
     padding: 0 10px 0 0;
     font-size: 20px;

@@ -1,13 +1,46 @@
 $(document).ready(function(){
-    /*1. 전체선택 --> 1-4번선택 */
-    if($('#chkAll').prop('checked')) {
-        $('input:checkbox').prop('checked', true);
+    var chkAll = $('#chkAll');
+    
+    
+    /*1. 전체선택 (전체선택해제)--> 1-4번선택(1-4번 일괄해제) */
+    chkAll.change(function(){
+        var chk = chkAll.prop('checked');
+        if(chk) {
+            //alert( $('#uncheck'));
+            $('tbody').find('.unchk').prop('checked', true);
+        } else {
+            $('tbody').find('.unchk').prop('checked', false);
+        }
+    });
+        
+    /*2. 1-4번선택(1-4번 중 하나라도 선택x) --> 전체선택(전체선택취소)*/
+    var chk1 = $('#chk1').prop('checked');
+    var chk2 = $('#chk2').prop('checked');
+    var chk3 = $('#chk3').prop('checked');
+    var chk4 = $('#chk4').prop('checked');
+    
+    if(chk1&&chk2&&chk3&&chk4) {
+        //alert(chk1);
+        //alert(chk2);
+        //alert(chk3);
+        //alert(chk4);
+        chkAll.prop('checked', true);
+    } else {
+        chkAll.prop('checked', false);
     }
+   
     
-    /*1-1. 1-4번 중 하나라도 체크 안되어 있으면 --> 전체선택 취소*/
-    
-    /*2. 1-4번선택 --> 전체선택*/
     /*3. 1번과 2번 필수선택항목 --> 체크 안하면 경고메시지*/
+    $('#signupCheck').submit(function(){
+        //alert($('#chk1').prop('checked'));
+        if($('#chk1').prop('checked') && $('#chk2').prop('checked')) {
+            //alert('true');
+            return true;
+        }; 
+        alert('필수항목을 체크해주세요!');
+        //alert($('tbody').find('.unchk').prop('checked'));
+        return false;
+    });
     
     
     
