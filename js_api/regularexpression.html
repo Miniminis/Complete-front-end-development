@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+        <title>form api </title>
+        <style>
+            
+        </style>
+        <!--$인식이 되지 않는 오류 -> script src 누락-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#range').change(function(){
+                    //range 가 변할때마다 알림메시지 출력
+                    alert($(this).val());
+                });
+                $('#color').change(function(){
+                    //$('#color+span').html($(this).val());
+                    $('#color+span').html('아이디를 입력해주세요!');
+                });
+            });
+        </script>
+    </head>
+    <body>
+       <h2>form api/autofocus/required/autocomplete</h2>
+        <form>
+            on: <input type="text" name="keyword" autocomplete="on" placeholder="아이디 " required><br>
+            off: <input type="text" name="keyword" autocomplete="off"><br>
+            required: <input type="text" name="keyword" autocomplete="on" required><br>
+            email: <input type="email" name="email"><br>
+            나이: <input type="number" name="age"><br>
+            URL: <input type="url" name="url" autofocus><br>
+            Tel: <input type="tel" name="tel" ><br>
+            
+            <h3>range - 100%</h3>
+            Range: <input type="range" name="range" id="range" style="width: 100%"><br>
+            Date: <input type="date" name="date"><br>
+            Week: <input type="week" name="week"><br>
+            
+            <h3>span tag 이용하여 오류메시지 띄우기 - naver </h3>
+            Color: <input type="color" name="color" id="color"><span></span><br>
+            
+            <h3>정규식표현</h3>
+            Pattern - zipcode: <input type="text" name="zip" id="zip" pattern="[0-9]{5}" required><br>
+            <input type="submit" value="제출하기">
+        </form>
+    </body>
+</html>

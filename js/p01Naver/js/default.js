@@ -1,7 +1,7 @@
+/*jquery 이용하여 유효성 검사*/
 $(document).ready(function(){
     var chkAll = $('#chkAll');
-    
-    
+      
     /*1. 전체선택 (전체선택해제)--> 1-4번선택(1-4번 일괄해제) */
     chkAll.change(function(){
         var chk = chkAll.prop('checked');
@@ -14,21 +14,28 @@ $(document).ready(function(){
     });
         
     /*2. 1-4번선택(1-4번 중 하나라도 선택x) --> 전체선택(전체선택취소)*/
-    var chk1 = $('#chk1').prop('checked');
-    var chk2 = $('#chk2').prop('checked');
-    var chk3 = $('#chk3').prop('checked');
-    var chk4 = $('#chk4').prop('checked');
-    
-    if(chk1&&chk2&&chk3&&chk4) {
-        //alert(chk1);
-        //alert(chk2);
-        //alert(chk3);
-        //alert(chk4);
-        chkAll.prop('checked', true);
-    } else {
-        chkAll.prop('checked', false);
-    }
-   
+    $('tbody').find('.unchk').change(function(){
+        //1-4번의 변화체크를 할때, 만약 chkAll가 checked되어있으면 --> false로 바꿔주기
+        if(chkAll.prop('checked')) {
+            chkAll.prop('checked', false);
+        }
+        
+        
+        //1-4번이 모두 선택되면 --> 전체선택 
+        if($('#chk1').prop('checked') &&
+          $('#chk2').prop('checked') &&
+          $('#chk3').prop('checked') &&
+          $('#chk4').prop('checked')){
+            chkAll.prop('checked', true);
+        }
+        
+         //1-4번이 모두 선택되면 --> 전체선택 
+//        if($(this).prop('checked')) {
+//           chkAll.prop('checked', true);
+//        }  
+        
+    });
+ 
     
     /*3. 1번과 2번 필수선택항목 --> 체크 안하면 경고메시지*/
     $('#signupCheck').submit(function(){
@@ -36,71 +43,11 @@ $(document).ready(function(){
         if($('#chk1').prop('checked') && $('#chk2').prop('checked')) {
             //alert('true');
             return true;
-        }; 
-        alert('필수항목을 체크해주세요!');
-        //alert($('tbody').find('.unchk').prop('checked'));
+        };
+        $('#chkerror').html('네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.').css({
+            color: 'red',
+            fontSize: '15px'
+        });
         return false;
     });
-    
-    
-    
 });
-
-
-
-
-
-
-
-/*javascript 만을 이용하여 체크항목 유효성 검사*/
-/*window.onload = function () {
-    var signupCheck = document.getElementById('signupCheck');
-    var chk1 = document.getElementById('chk1');
-    var chk2 = document.getElementById('chk2');
-
-    //동의 버튼을 눌렀을떄 - 필수 체크항목 2개 검사 
-    signupCheck.onsubmit = function () {
-        if (!chk1.checked || !chk2.checked) {
-            
-            alert('네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.');
-            return false;
-        }
-        return true;
-    };
-};
-
-//전체 선택 --> 1-4번까지 일괄 체크됨 
-//1-4번이 모두 선택되면 - 전체선택 버튼도 선택
-function allcheck() {
-    var chkAll = document.getElementById('chkAll');
-    var chk1 = document.getElementById('chk1');
-    var chk2 = document.getElementById('chk2');
-    var chk3 = document.getElementById('chk3');
-    var chk4 = document.getElementById('chk4');
-
-    //console.log('전체 체크'); //확인
-
-    if (chkAll.checked == true) { //만약 전체 체크 버튼이 checked 이면
-        //alert('전체체크 '); //확인
-        chk1.checked = true;
-        chk2.checked = true;
-        chk3.checked = true;
-        chk4.checked = true;
-    } else { //전체 선택버튼이 checked 가 아니면
-        chk1.checked = false;
-        chk2.checked = false;
-        chk3.checked = false;
-        chk4.checked = false;
-    }
-};
-
-//1-4번중에 하나라도 체크되지 않으면 --> 전체선택버튼 체크 취소 
-function uncheck() { //버튼이 checked 되어있지 않으면 
-    var chkAll = document.getElementById('chkAll');
-
-    if (chkAll.checked == true) {
-        chkAll.checked = false;
-    }
-}*/
-
-

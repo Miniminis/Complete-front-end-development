@@ -45,7 +45,7 @@ i {
 }
 
 #content td {
-    width: 100%;
+    /*width: 100%;*/
     height: 40px;
     padding: 7px 5px;
     border: 1px solid #DADADA;
@@ -54,14 +54,35 @@ i {
     color: #8E8E8E;
 }
 
-#content tr:nth-child(1) td, 
-#content tr:nth-child(3) td,
-#content tr:nth-child(5) td, 
-#content tr:nth-child(7) td, 
+/*에러메시지 표시 및 공백을 위한 td 영역 스타일 지우기*/
+#content tr:nth-child(3) td, 
+#content tr:nth-child(6) td, 
 #content tr:nth-child(9) td, 
-#content tr:nth-child(11) td, 
-#content tr:nth-child(13) td,
-#content tr:nth-child(15) td {
+#content tr:nth-child(12) td,
+#content tr:nth-child(15) td, 
+#content tr:nth-child(18) td,
+#content tr:nth-child(23) td, 
+#content tr:nth-child(25) td, 
+#content tr:nth-child(27) td{
+    border: none;
+    height: 5px;
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+#content tr:nth-child(27) td {
+    padding: 15px;
+}
+
+/*항목 이름*/
+#content tr:nth-child(1) td, 
+#content tr:nth-child(4) td,
+#content tr:nth-child(7) td, 
+#content tr:nth-child(10) td, 
+#content tr:nth-child(13) td, 
+#content tr:nth-child(16) td, 
+#content tr:nth-child(19) td,
+#content tr:nth-child(21) td{
     height: 40px;
     border: none;
     padding: 20px 0 5px 0;
@@ -80,43 +101,36 @@ i {
     font-size: 18px;
 }
 
+/*아이디입력*/
 #content tr:nth-child(2) input {
     width: 75%;
 }
 
-#content tr:nth-child(4) input, 
-#content tr:nth-child(6) input {
+/*비밀번호, 비밀번호 재확인 입력*/
+#content tr:nth-child(5) input, 
+#content tr:nth-child(8) input {
     width: 90%;
 }
-#content tr:nth-child(8) input, 
-#content tr:nth-child(10) input,
-#content tr:nth-child(10) select,
-#content tr:nth-child(12) select,
-#content tr:nth-child(14) input, 
-#content tr:nth-child(16) select, 
-#content tr:nth-child(18) td:nth-child(1) input {
+
+/*나머지 input의 width값 설정*/
+#content tr:nth-child(11) input, 
+#content tr:nth-child(14) input,
+#content tr:nth-child(14) select,
+#content tr:nth-child(17) select,
+#content tr:nth-child(20) input, 
+#content tr:nth-child(22) select, 
+#content tr:nth-child(24) td:nth-child(1) input {
     width: 95%;
 }
 
 /*생년월일 width 값 에러 미해결*/
-#content tr:nth-child(10) td {
-    width: 20%;
+#content tr:nth-child(14) td{
+    width: 30%;
 }
 
-#content tr:nth-child(17) td, 
-#content tr:nth-child(19) td, 
-#content tr:nth-child(21) td{
-    border: none;
-    height: 5px;
-    padding: 0;
-    background-color: transparent;
-}
 
-#content tr:nth-child(21) td {
-    padding: 15px;
-}
-
-#content tr:nth-child(18) td:nth-child(2) input {
+/*인증번호받기 버튼설정*/
+#content tr:nth-child(24) td:nth-child(2) input {
     width: 100%;
     height: 40px;
     margin: 0;
@@ -126,26 +140,30 @@ i {
     font-size: 14px;
     cursor: pointer;
 }
-#content tr:nth-child(18) td:nth-child(2){
+#content tr:nth-child(24) td:nth-child(2){
     padding: 0;
     height: 30px;
     background-color: #08A600;
     text-align: center;
 }
 
-#content tr:nth-child(20) input {
+/*인증번호 입력칸*/
+#content tr:nth-child(26) input {
     width: 95%;
     background-color: #F5F6F7;
 }
-#content tr:nth-child(20) td {
+#content tr:nth-child(26) td {
     background-color: #F5F6F7;
 }
-#content tr:nth-child(22) td {
+
+
+/*가입하기 버튼*/
+#content tr:nth-child(28) td {
     background-color: #08A600;
     padding: 0;
     height: 60px;
 }
-#content tr:nth-child(22) input {
+#content tr:nth-child(28) input {
     width: 100%;
     height: 60px;
     margin: 0;

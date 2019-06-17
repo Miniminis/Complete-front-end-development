@@ -42,7 +42,7 @@ $('document').ready(function(){
     $('h1').each(function(index, item){
         
         //배열의 요소 확인 
-        //alert(item.innerHTML);
+        alert(index);
         
         //배열의 요소.값 - 각 h1 태그에 [index] 값을 표시 
         //item.innerHTML += '['+index+']';
