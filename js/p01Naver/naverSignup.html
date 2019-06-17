@@ -6,8 +6,8 @@
     
     <title>네이버: 회원가입</title>
     
-    <link href="css/default.css" rel="stylesheet" type="text/css">
-    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/signup.css" rel="stylesheet" type="text/css">
+    <!--<link href="css/screen.css" rel="stylesheet" media="screen">-->
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://kit.fontawesome.com/744ccfa256.js"></script>
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="text" id="id" name="id">@naver.com
+                    <input type="text" id="id" name="id" class="required">@naver.com
                 </td>
             </tr>
             <tr><td colspan="3"><span id="idAlert"></span></td></tr>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="password" id="pw" name="pw" >
+                    <input type="password" id="pw" name="pw" class="required">
                     <i class="fas fa-lock"></i>
                 </td>
             </tr>
@@ -53,7 +53,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <input type="password" id="pwchk" name="pwCheck">
+                    <input type="password" id="pwchk" name="pwCheck" class="required">
                     <i class="fas fa-unlock"></i>
                 </td>
             </tr>
@@ -64,7 +64,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3"><input type="text" id="username" name="username"></td>
+                <td colspan="3"><input type="text" id="username" name="username" class="required"></td>
             </tr>
             <tr><td colspan="3"><span id="nameAlert"></span></td></tr>
             <tr>
@@ -98,7 +98,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3"><select id="gender" name="gender">
+                <td colspan="3"><select id="gender" name="gender" class="required">
                     <option>성별</option>
                     <option>여자</option>
                     <option>남자</option>
@@ -131,7 +131,7 @@
             </tr>
             <tr><td></td></tr>
             <tr>
-                <td colspan="2"><input type="text" id="phnum2" name="phnum" placeholder="전화번호 입력"></td>
+                <td colspan="2"><input type="text" id="phnum2" name="phnum" placeholder="전화번호 입력" class="required"></td>
                 <td><input type="button" value="인증번호 받기" id="veriNum"></td>
             </tr>
              <tr><td></td></tr>

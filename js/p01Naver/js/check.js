@@ -15,7 +15,7 @@ $(document).ready(function(){
         
     /*2. 1-4번선택(1-4번 중 하나라도 선택x) --> 전체선택(전체선택취소)*/
     $('tbody').find('.unchk').change(function(){
-        //1-4번의 변화체크를 할때, 만약 chkAll가 checked되어있으면 --> false로 바꿔주기
+        //1-4번에 변화가 있을때, 만약 chkAll가 checked되어있으면 --> false로 바꿔주기
         if(chkAll.prop('checked')) {
             chkAll.prop('checked', false);
         }
@@ -29,7 +29,8 @@ $(document).ready(function(){
             chkAll.prop('checked', true);
         }
         
-         //1-4번이 모두 선택되면 --> 전체선택 
+         //1-4번이 모두 선택되면 --> 전체선택
+         //아래의 경우 --> 오류: 4개의 항목 중 하나만 선택되도 전체선택됨 
 //        if($(this).prop('checked')) {
 //           chkAll.prop('checked', true);
 //        }  
