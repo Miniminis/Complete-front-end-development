@@ -61,16 +61,16 @@ i {
 #content tr:nth-child(12) td,
 #content tr:nth-child(15) td, 
 #content tr:nth-child(18) td,
-#content tr:nth-child(23) td, 
-#content tr:nth-child(25) td, 
-#content tr:nth-child(27) td{
+#content tr:nth-child(21) td,
+#content tr:nth-child(24) td, 
+#content tr:nth-child(26) td, 
+#content tr:nth-child(28) td{
     border: none;
-    height: 5px;
-    padding: 10px 0;
+    height: 3px;
     background-color: transparent;
 }
 
-#content tr:nth-child(27) td {
+#content tr:nth-child(28) td {
     padding: 15px;
 }
 
@@ -82,10 +82,10 @@ i {
 #content tr:nth-child(13) td, 
 #content tr:nth-child(16) td, 
 #content tr:nth-child(19) td,
-#content tr:nth-child(21) td{
+#content tr:nth-child(22) td{
     height: 40px;
     border: none;
-    padding: 20px 0 5px 0;
+    padding: 5px 0;
     background-color:#F5F6F7;
     font-weight: 600;
     color: #000000;
@@ -118,19 +118,19 @@ i {
 #content tr:nth-child(14) select,
 #content tr:nth-child(17) select,
 #content tr:nth-child(20) input, 
-#content tr:nth-child(22) select, 
-#content tr:nth-child(24) td:nth-child(1) input {
-    width: 95%;
+#content tr:nth-child(23) select, 
+#content tr:nth-child(25) td:nth-child(1) input {
+    width: 92%;
 }
 
-/*생년월일 width 값 에러 미해결*/
+/*생년월일 width 값*/
 #content tr:nth-child(14) td{
     width: 30%;
 }
 
 
 /*인증번호받기 버튼설정*/
-#content tr:nth-child(24) td:nth-child(2) input {
+#content tr:nth-child(25) td:nth-child(2) input {
     width: 100%;
     height: 40px;
     margin: 0;
@@ -140,7 +140,7 @@ i {
     font-size: 14px;
     cursor: pointer;
 }
-#content tr:nth-child(24) td:nth-child(2){
+#content tr:nth-child(25) td:nth-child(2){
     padding: 0;
     height: 30px;
     background-color: #08A600;
@@ -148,22 +148,22 @@ i {
 }
 
 /*인증번호 입력칸*/
-#content tr:nth-child(26) input {
+#content tr:nth-child(27) input {
     width: 95%;
     background-color: #F5F6F7;
 }
-#content tr:nth-child(26) td {
+#content tr:nth-child(27) td {
     background-color: #F5F6F7;
 }
 
 
 /*가입하기 버튼*/
-#content tr:nth-child(28) td {
+#content tr:nth-child(29) td {
     background-color: #08A600;
     padding: 0;
     height: 60px;
 }
-#content tr:nth-child(28) input {
+#content tr:nth-child(29) input {
     width: 100%;
     height: 60px;
     margin: 0;

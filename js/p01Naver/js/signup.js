@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    //프로그램 시작 시 --> 생년월일의 월 반목문 실행
     bmonthSpan();
 
     //form - 가입하기버튼 클릭시 
@@ -25,12 +25,7 @@ $(document).ready(function(){
     });
     
     
-    /*각 항목 focusout때 마다 유효성검사*/
-    //필수 정보입니다.
-    /*$('.required').focusout(function(){
-        $(this).
-    });*/
-    
+    /*각 항목 focusout때 마다 유효성검사*/    
     /*유효성검사- 아이디*/
     $('#id').focusout(function(){
         //5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.
@@ -96,25 +91,28 @@ $(document).ready(function(){
             $('#bdateAlert').html('태어난 년도 4자리를 정확하게 입력하세요.').css({color: "red"});
         } else if($(this).val().length == 4) {
             $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
-        } else if ($(this).val().length >4){
-            $(this).val($(this).val().substr(0, 4)); //4자리 이상이면 입력 불가
+        } else {
+            $(this).val($(this).val().substr(0, 4)); //년도: 4자리 이상이면 입력 불가
         }
     });
     
-    /*유효성검사 - 달 & 날짜: 연도와 날짜까지 입력되고 포커스가 아웃될때 경고메시지 표시됨*/
+    /*유효성검사 - 달 & 날짜: 연도와 날짜까지 입력되고 포커스가 아웃될때 월에 대한 경고메시지 표시됨*/
     $('#bday').focusout(function(){
+        var today = new Date(); //오늘날짜
+        var tYear = today.getFullYear();
+        var tMonth = today.getMonth()+1;
+        var tDate = today.getDate();
 
         if($(this).val().length <2) {
             $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
         } else if ($(this).val().length >2) {
-            $(this).val($(this).val().substr(0, 2));
-        } else if($('#bmonth').children().val() == 'defMon') {
+            $(this).val($(this).val().substr(0, 2)); //날짜: 2자리 이상 입력 불가
+        } else if($('#bmonth').children().val() == 'mDefault') { //월 미선택시 오류
             $('#bdateAlert').html('생년월일을 다시 확인해주세요.').css({color: "red"});
-        } else if(($('#byear').val() <1920) && ($('#bmonth').val() <7) && ($('#bday').val() <20)) { 
+        } else if(($('#byear').val() <1920) && ($('#bmonth').children().val() <7) && ($('#bday').val() <20)) { 
             $('#bdateAlert').html('정말이세요?').css({color: "red"}); // : 1919년 6월 19일 이전
-        } else if($('#byear')) {
-            
-            //미래에서 오셨군요. ^^ //오늘날짜초과
+        } else if(($('#byear').val()>tYear)&&($('#bmonth').children().val()>tMonth)&&($('#bday').val()>tDate)) {
+             $('#bdateAlert').html('미래에서 오셨군요. ^^').css({color: "red"}); //오늘날짜초과
         } else {
             $('#bdateAlert').html('');
         } 
@@ -126,10 +124,10 @@ $(document).ready(function(){
     
     /*유효성검사 - 성별*/
     $('#gender').focusout(function(){
-        
-        if($(this).val()<1) {
+        if($(this).children().val() == 'gDefault') {
             $('#genderAlert').html('필수 정보입니다.').css({color: "red"});
         }
+        $('#genderAlert').html('');
     });
     
     /*유효성검사 - 이메일*/
