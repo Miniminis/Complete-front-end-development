@@ -3,11 +3,10 @@ $(document).ready(function(){
     bmonthSpan();
 
     //form - 가입하기버튼 클릭시 
-    $("#content").submit(function(){
+    /*$("#content").submit(function(){
         
-    });
-    
-    
+    });*/
+       
     /*focusin - border color change*/
     $("input").focusin(function(){
         $(this).parent().css({border: "1px solid #08A600"});
@@ -23,8 +22,7 @@ $(document).ready(function(){
     $('select').focusout(function(){
         $(this).parent().css({border: "1px solid #DADADA"});
     });
-    
-    
+       
     /*각 항목 focusout때 마다 유효성검사*/    
     /*유효성검사- 아이디*/
     $('#id').focusout(function(){
@@ -66,6 +64,7 @@ $(document).ready(function(){
             $('#pwchkAlert').html('비밀번호가 일치하지 않습니다.').css({color: "red"});
         } else {
             $(this).next().css({color: "#08A600"});
+            $('#pwchkAlert').html('');
         }
     });
     
@@ -84,90 +83,127 @@ $(document).ready(function(){
         }
     });
     
+    /*생년월일 유효성 검사를 위한 현재날짜 변수선언*/
+    var today = new Date(); //오늘날짜
+    var tYear = today.getFullYear();
+    var tMonth = today.getMonth()+1;
+    var tDate = today.getDate();
+    var regYear = /^19[1-9][0-9]|20[0-9]{2}$/; //1919년 6월 20일 이후
+    var regDay= /^0[0-9]|[1-2][0-9]|3[0-1]$/;
+    
     /*유효성검사 - 연도*/
     $('#byear').focusout(function(){
-        
         if($(this).val().length <4) {
             $('#bdateAlert').html('태어난 년도 4자리를 정확하게 입력하세요.').css({color: "red"});
         } else if($(this).val().length == 4) {
             $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
         } else {
             $(this).val($(this).val().substr(0, 4)); //년도: 4자리 이상이면 입력 불가
+            if($('#bday').val()=='') {
+                $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
+            } else if(){
+                
+            }   
         }
     });
     
-    /*유효성검사 - 달 & 날짜: 연도와 날짜까지 입력되고 포커스가 아웃될때 월에 대한 경고메시지 표시됨*/
-    $('#bday').focusout(function(){
-        var today = new Date(); //오늘날짜
-        var tYear = today.getFullYear();
-        var tMonth = today.getMonth()+1;
-        var tDate = today.getDate();
-
-        if($(this).val().length <2) {
+    /*유효성검사 - 달: 월 선택이 기본값에서 변할때 --> 1) 년도 값이 없을때 2) 일 값이 없을때 */
+    $('#bmonth').focusout(function(){
+        //alert($('#byear').val());
+        if($('#byear').val()=='') {
+            $('#bdateAlert').html('태어난 년도 4자리를 정확하게 입력하세요.').css({color: "red"});
+        } else if($('#bday').val()=='') {
             $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
-        } else if ($(this).val().length >2) {
-            $(this).val($(this).val().substr(0, 2)); //날짜: 2자리 이상 입력 불가
-        } else if($('#bmonth').children().val() == 'mDefault') { //월 미선택시 오류
-            $('#bdateAlert').html('생년월일을 다시 확인해주세요.').css({color: "red"});
-        } else if(($('#byear').val() <1920) && ($('#bmonth').children().val() <7) && ($('#bday').val() <20)) { 
-            $('#bdateAlert').html('정말이세요?').css({color: "red"}); // : 1919년 6월 19일 이전
-        } else if(($('#byear').val()>tYear)&&($('#bmonth').children().val()>tMonth)&&($('#bday').val()>tDate)) {
-             $('#bdateAlert').html('미래에서 오셨군요. ^^').css({color: "red"}); //오늘날짜초과
-        } else {
-            $('#bdateAlert').html('');
-        } 
+        } else { //월 선택값 --> 1) 기본값 2) 다른 값 선택
+            if($('#bmonth option:selected').val()==0){
+                $('#bdateAlert').html('생년월일을 다시 확인해주세요.').css({color: "red"});
+            } else {
+                $('#bdateAlert').html('');
+            }
+        }
     });
     
-    $('#bmonth').focusout(function(){
-        $('#bdateAlert').html('');
+    /*유효성검사 - 날짜*/
+    $('#bday').focusout(function(){
+        
+        
+        if($('#byear').val()=='') {
+            $('#bdateAlert').html('태어난 년도 4자리를 정확하게 입력하세요.').css({color: "red"});
+        } else {
+            if($(this).val().length <2) {
+                $('#bdateAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
+            } else if ($(this).val().length >2) {
+                $(this).val($(this).val().substr(0, 2)); //날짜: 2자리 이상 입력 불가
+                $('#bdateAlert').html(''); //올바르게 입력 --> 오류메시지 삭제
+            }
+        }
+
+         
+       /*else if($('#bmonth').children().val() == 'mDefault') { //월 미선택시 오류
+            $('#bdateAlert').html('생년월일을 다시 확인해주세요.').css({color: "red"});
+        } else if(($('#byear').val() <1920) && ($('#bmonth').children().val() <7) && ($('#bday').val() <20)) { 
+            $('#bdateAlert').html('정말이세요?').css({color: "red"}); // : 
+        } else if(($('#byear').val()>tYear)&&($('#bmonth').children().val()>tMonth)&&($('#bday').val()>tDate)) {
+             $('#bdateAlert').html('미래에서 오셨군요. ^^').css({color: "red"}); //오늘날짜초과
+        }*/
+        
     });
+    
+    
     
     /*유효성검사 - 성별*/
     $('#gender').focusout(function(){
-        if($(this).children().val() == 'gDefault') {
+        if($('#gender option:selected').val() == 0) {
             $('#genderAlert').html('필수 정보입니다.').css({color: "red"});
+            //alert('필수정보')
+        } else {
+            $('#genderAlert').html('');
         }
-        $('#genderAlert').html('');
+        //alert($('#gender option:selected').val() ==0);
     });
     
     /*유효성검사 - 이메일*/
-    /*$('#email').focusout(function(){
-        //이메일 주소를 다시 확인해주세요.
-        var regEmail;
-        
-        if($(this).val()<1) {
-            $('#genderAlert').html('태어난 일(날짜) 2자리를 정확하게 입력하세요.').css({color: "red"});
-        }
-    });*/
-    
-    /*유효성검사 - 전화번호*/
-    $('#phnum2').focusout(function(){
-        if($(this).val()<1) {
-            $('#phnumAlert').html('필수 정보입니다.').css({color: "red"});
+    $('#email').focusout(function(){
+        var regEmail = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
+        if(regEmail.test($(this).val())==false) {
+            $('#emailAlert').html('이메일 주소를 다시 확인해주세요.').css({color: "red"});
+        } else {
+            $('#emailAlert').html('');
         }
     });
     
-    /*유효성검사 - 인증번호 클릭시 - 전화번호*/
-    /*$('#veriNum').click(function(){
-         //형식에 맞지 않는 번호입니다.
-        var regPhnum;
-        if() {
-           $('#phnumAlert').html('형식에 맞지 않는 번호입니다.').css({color: "red"});
+    /*유효성검사 - 전화번호 입력유무*/
+    $('#phnum2').focusout(function(){
+        if($(this).val().length<1) { //정보미입력
+            $('#phnumAlert').html('필수 정보입니다.').css({color: "red"});
+        } else { //정보입력
+            $('#phnumAlert').html('');
         }
-    });*/
+    });
+    
+    /*유효성검사 - 인증번호 클릭시 --> 전화번호 유효성*/
+    $('#veriNum').click(function(){
+        var regPhnum = /^010-?([0-9]{4})-?([0-9]{4})$/;
+        if(regPhnum.test($(this).val())==false) {
+           $('#phnumAlert').html('형식에 맞지 않는 번호입니다.').css({color: "red"});
+        } else {
+            $('#phnumAlert').html('');
+        }
+    });
     
     /*유효성검사 - 전화번호 인증번호*/
     $('#phnum3').focusout(function(){
-        if($(this).val().length <1) {
+        if($(this).val().length <1) { //인증번호 미입력
             $('#phnumAlert').html('인증이 필요합니다.').css({color: "red"});
+        } else {
+            $('#phnumAlert').html('');
         }
     });
-
-    
-});
+}); //ready() END
 
 /*생년월일 - 월 반복문*/
 function bmonthSpan (){
     for(var i=1; i<13; i++) { $('#bmonth').append('<option value="'+i+'">'+i+'</option>');
     }
 };
+        

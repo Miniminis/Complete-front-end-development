@@ -75,7 +75,7 @@
             <tr>
                 <td><input type="text" id="byear" name="byear" placeholder="년(4자)" ></td>
                 <td><select id="bmonth" name="bmonth" >
-                        <option value="mDefault" selected>월</option>
+                        <option value="0" selected>월</option>
                 </select></td>
                 <td><input type="text" id="bday" name="bday" placeholder="일"></td>
             </tr>
@@ -87,10 +87,10 @@
             </tr>
             <tr>
                 <td colspan="3"><select id="gender" name="gender" class="required">
-                    <option value="gDefault">성별</option>
-                    <option value="woman">여자</option>
-                    <option value="man">남자</option>
-                    <option value="etc">기타</option>
+                    <option value="0">성별</option>
+                    <option value="1">여자</option>
+                    <option value="2">남자</option>
+                    <option value="3">기타</option>
                 </select></td>
             </tr>
             <tr><td colspan="3"><span id="genderAlert"></span></td></tr>
@@ -102,7 +102,7 @@
             <tr>
                 <td colspan="3"><input type="email" id="email" name="email" placeholder="선택입력"></td>
             </tr>
-            <tr><td></td></tr>
+            <tr><td colspan="3"><span id="emailAlert"></span></td></tr>
             <tr>
                 <td colspan="3">
                     <label for="phnum2">휴대전화</label>
