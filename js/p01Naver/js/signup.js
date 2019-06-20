@@ -219,7 +219,7 @@ $(document).ready(function(){
         for(var i=0; i<Object.keys(validation).length; i++) {
             //alert(validation[i]);
             if(validation[i]==false) {
-                alert('필수사항입니다.');
+                alert('필수 정보를 입력해주세요.');
                 $(span).each(function(){
                     $(this).html('필수 정보입니다.').css({color: "red"});
                 });
